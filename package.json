@@ -6,15 +6,30 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "firebase": "^7.15.1",
+    "history": "^5.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.26.0",
+    "mongoose": "^5.9.19",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "uuidv4": "^6.1.0",
+    "validator": "^13.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "node server/app.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }
