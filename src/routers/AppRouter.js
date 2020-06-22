@@ -1,23 +1,25 @@
 import React from 'react';
-import {Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 
-import HomePage from '../components/HomePage/HomePage';
-import PageNotFound from '../components/PageNotFound/PageNotFound';
-import ShoppingList from '../components/ShoppingList/ShoppingList';
+import HomePage from '../components/Pages/HomePage/HomePage';
+import PageNotFound from '../components/Pages/PageNotFound/PageNotFound';
+import RecipePage from '../components/Pages/RecipePage/RecipePage';
+import ShoppingListPage from '../components/Pages/ShoppingListPage/ShoppingListPage';
 
 
 export const history = createBrowserHistory();
 
 const AppRouter = () => {
   return (
-    <Router history={history}>
+    <BrowserRouter>
       <Switch>
-        <Route path="/" component={HomePage} exact={true}/>
-        <Route path="/shopping-list" component={ShoppingList} />
-        <Route component={PageNotFound}/>
+        <Route path="/" component={HomePage} exact/>
+        <Route path="/shopping-list" component={ShoppingListPage} />
+        <Route path="/recipe/:id" component={RecipePage} />
+        <Route component={PageNotFound} />
       </Switch>
-    </Router>
+    </BrowserRouter>
   )
 }
 

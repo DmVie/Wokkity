@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ShoppingList = () => {
+const ShoppingListPage = () => {
   return (
     <div>
       <h1>Shopping List</h1>
@@ -8,4 +8,4 @@ const ShoppingList = () => {
   )
 }
 
-export default ShoppingList
+export default ShoppingListPage

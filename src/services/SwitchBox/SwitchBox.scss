@@ -1,0 +1,47 @@
+@import '../../styles/sass/base';
+
+.switch-box-container {
+  background: #e2e2e2;
+}
+
+.switch-box-container .switch-box-header {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(241, 241, 241);
+}
+
+.switch-box-container .switch-box-header a {
+  text-decoration: none;
+  background: rgb(245, 244, 242);
+  border-radius: 5px 5px 0 0;
+  border: 1px solid rgb(228, 228, 228);
+  padding: 10px; 
+}
+
+.switch-box-header a.activeTab {
+  background: white;
+  border-bottom: none;
+}
+
+.switch-box-container ul,
+.switch-box-container ol {
+  padding: 0;
+  width: 80%;
+  margin: 0 auto
+}
+
+.switch-box-content {
+  background: white;
+  margin: 0 auto;
+  padding: 10px;
+  border-right: 1px solid rgb(228, 228, 228);
+  border-left: 1px solid rgb(228, 228, 228);
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.switch-box-container ul li,
+.switch-box-container ol li {
+  font-size: $xs-fs;
+  line-height: 1.4;
+  margin-top: $xs-fs
+}

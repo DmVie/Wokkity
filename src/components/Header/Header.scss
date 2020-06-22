@@ -6,12 +6,16 @@ header {
 
 header img, 
 header button {
-  top: 8px;
+  top: 4;
+}
+
+header button {
+  top: 6px;
 }
 
 header  img {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   position: absolute;
   left: 10%;
   transform: rotate(30deg)

@@ -1,5 +1,7 @@
 import React from 'react'
-import './Header.css'
+import './Header.scss'
+
+import { Link } from 'react-router-dom';
 
 import Button from '../Button/Button';
 
@@ -8,7 +10,6 @@ import { startLogin, startLogout } from '../../actions/user';
 import { connect } from 'react-redux';
 
 const Header = (props) => {
-
 
   const startLogin = () => {
     props.startLogin()
@@ -21,9 +22,10 @@ const Header = (props) => {
   return (
     <header>
       <div>
-        <img src="https://wokkiti.s3-ap-southeast-1.amazonaws.com/wok.png" alt="wok" />
+        <Link to="/">
+          <img src="https://wokkiti.s3-ap-southeast-1.amazonaws.com/wok.png" alt="wok" />
+        </Link>
       </div>
-
       <div>
       {
         props.isAuthenticated ? (

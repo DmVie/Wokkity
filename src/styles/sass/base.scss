@@ -1,0 +1,35 @@
+// fonts
+$xxs-fs: 1.1rem;
+$xs-fs: 1.3rem;
+$s-fs: 1.6rem;
+$m-fs: 2rem;
+$l-fs: 2.8rem;
+$xl-fs: 5rem;
+$xxl-fs: 7rem;
+
+$red: rgb(161, 55, 55);
+
+// Breakpoints: 
+$tablet-breakpoint: 76.8rem;
+$desktop-breakpoint: 102.5rem;
+
+
+h1, h2, h3 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: $l-fs;
+ }
+
+h2 {
+  font-size: $m-fs
+}
+
+p, a, li  {
+  font-size: $s-fs;
+}
+
+ul li {
+  list-style: none;
+}

@@ -1,0 +1,31 @@
+.line-through {
+  text-decoration: line-through;
+}
+
+section.notes hr {
+  width: 50%;
+  position: relative;
+  top: -10px;
+  margin: 0 auto;
+}
+
+section.notes ul {
+  padding: 0;
+}
+
+section.notes ul li {
+  padding: 15px;
+}
+
+section.notes ul li:not(:first-child) {
+  margin-top: 40px
+}
+
+section.notes ul li:nth-child(even) {
+  background: white;
+}
+
+section.notes ul li:nth-child(odd) {
+  background: rgb(239, 243, 243);
+}
+

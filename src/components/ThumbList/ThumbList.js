@@ -1,34 +1,26 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import './RecipeList.css';
+import './ThumbList.scss';
 import { connect } from 'react-redux';
 
 // Composite Component Imports
-import RecipeListItem from '../RecipeListItem/RecipeListItem';
+import ThumbListItem from '../ThumbListItem/ThumbListItem';
 
 // Action Generators 
 import { startSetRecipes} from '../../actions/recipes'
 
-const RecipeList = (props) => {
-
-  console.log(props)
-
-  useEffect(() => {
-    props.startSetRecipes()
-  }, [])
-
+const ThumbList = (props) => {
 
   return (
     <div>
-      <h1 className="recipe-list-title">Recipes</h1>
-      <ul className="recipe-list-container">
+      <ul className="thumb-list-container">
         {
           props.recipes.length === 0 && (<p>No recipes have been added yet,  we're working on it! :)</p>)
         }
         {
  
           props.recipes.map((recipe) => {
-            return <RecipeListItem {...recipe} key={recipe.id}/>
+            return <ThumbListItem recipe={recipe} key={recipe.id}/>
           })
         }
       </ul>
@@ -44,4 +36,4 @@ const mapDispatchToProps = (dispatch) => ({
     startSetRecipes: () => dispatch(startSetRecipes())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeList)
+export default connect(mapStateToProps, mapDispatchToProps)(ThumbList)

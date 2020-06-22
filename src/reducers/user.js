@@ -1,4 +1,3 @@
-import { bindActionCreators } from "redux";
 
 export default (state={}, actions) => {
   switch( actions.type ) {

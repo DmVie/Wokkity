@@ -9,12 +9,16 @@ import { firebase } from './firebase/firebase';
 
 import configureStore from './store/configureStore';
 
+// import './localStorage seed-data/seed'
+
 // Composite Component Imports
-import LoadingPage from './components/LoadingPage/LoadingPage'; 
+import LoadingPage from './components/Pages/LoadingPage/LoadingPage'; 
 
 // Action Generators
 import { login, logout } from './actions/user';
-import { startSetRecipes } from './actions/recipes';
+
+import { startSetRecipes } from './actions/recipes'
+
 
 const store = configureStore()
 
@@ -25,14 +29,16 @@ ReactDOM.render(<LoadingPage />, document.getElementById('root'))
 
 const renderApp = () => {
   if(!hasRendered) {
-    ReactDOM.render(
-      <React.StrictMode>
-        <Provider store={store}>
-          <App />
-        </Provider>    
-      </React.StrictMode>,
-      document.getElementById('root')
-    );
+    store.dispatch(startSetRecipes()).then(() => {
+      ReactDOM.render(
+        <React.StrictMode>
+          <Provider store={store}>
+            <App />
+          </Provider>    
+        </React.StrictMode>,
+        document.getElementById('root')
+      );
+    })
   }
 
   hasRendered = true
@@ -46,6 +52,7 @@ firebase.auth().onAuthStateChanged((user) => {
   }else {
     console.log('Status: Signed in :)')
     store.dispatch(login(user.uid))   
+    renderApp();
   }
 })
 
