@@ -1,0 +1,62 @@
+div.picture-window {
+  width: 90vw;
+  overflow: hidden;
+  display:flex;
+  position: relative;
+}
+
+div.picture-window ul.taper {
+  display: flex;
+}
+
+div.picture-window ul.taper li {
+  width: 100vw;
+  height: auto;
+}
+
+div.picture-window ul.taper li img{
+  width: 100%;
+  height: auto;
+}
+
+div.left-nav-box,
+div.right-nav-box {
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  color: rgb(150, 150, 150);
+  font-size: 40px;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 1s ease
+}
+
+div.right-nav-box:hover > div {
+  color: white;
+  transition: color .5s ease;
+}
+
+div.left-nav-box:hover > div {
+  color: white;
+  transition: color .5 ease
+}
+
+
+div.left-nav-box > div,
+div.right-nav-box > div {
+  background: rgba(0,0,0,.6);
+  z-index: 2;
+}
+
+div.left-nav-box {
+  left: 0;
+}
+
+div.right-nav-box {
+  right: 0;
+}
+
+
+

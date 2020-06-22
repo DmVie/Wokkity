@@ -5,6 +5,7 @@ import './recipePage.css';
 import Banner from '../../Banner/Banner'
 
 import SwitchBox from '../../../services/SwitchBox/SwitchBox'
+import PictureBox from '../../../services/PictureBox/PictureBox'
 
 const RecipePage = ({recipe}) => {
 
@@ -19,9 +20,8 @@ const RecipePage = ({recipe}) => {
         <article  className="recipe">
           <section dangerouslySetInnerHTML={createMarkup(recipe.desc)} className="desc">
           </section>
-
           <SwitchBox recipe={recipe}/>
-
+          {recipe.gallery && recipe.gallery.length > 0 && <PictureBox images={recipe.gallery} />}
           <section className="notes">
             <h2>General Notes</h2>
             <hr />
