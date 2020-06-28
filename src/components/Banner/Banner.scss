@@ -4,6 +4,7 @@
   position: relative;
   text-align: center;
   padding: 0;
+  overflow: hidden;
 } 
 
 
@@ -24,11 +25,9 @@
   height: auto;
 }
 
-
-
-.overlay {
+.vignette {
   position: absolute;
-  z-index: 3;
+  z-index: 2;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -41,39 +40,66 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#000000",GradientType=1);
 }
 
-.overlay > div {
+// Container for text content within the banner
+.vignette > div {
   width: 80%;
   margin: 0 auto;
 }
 
 
-/* .page refers to banner that take up a whole section, like the main home page banner picture,  or  an individual page banner 
+/* .page refers to banner that take up a whole section of the screen, like the banner picture at the top of each recipe page
 
-.thumb referes to banners that cover thumbs such as a list item thumb. The list of recipes on the home page being an example.
+.siteBanner is the main site picture on the home page,  the splash screen as it were - the first thing that user sees when they visit the site
+
+.thumb referes to banners that cover thumbs such as a list item. The list of recipes on the home page being an example.
 */
+
+/* 
+  Home Page main Banner
+*/
+
+
+.banner-container.siteBanner h1 {
+  font-size: 5rem;
+}
+
+.banner-container.siteBanner,
 .banner-container.page {
   min-height: 50vh
 }
 
+.banner-container.siteBanner img.banner-bg ,
 .banner-container.page img.banner-bg {
   /* small device */
   height: 60vh;
   width: auto;
   position: relative;
-  left: -125px;
+  left: -155px;
 }
 
-.banner-container.page header {
+.banner-container.siteBanner header,
+.banner-container.page header{
   margin-top: 10px
 }
 
-.banner-container.page h1 {
+// FULL PAGE BANNER
+
+.banner-container.siteBanner h1,
+.banner-container.page h1{
   margin-top: 120px;
   display: inline-block;
   background: rgba(0,0,0,0.4);
   padding: 2px 10px;
   border-bottom: 3px solid $red;
 
+}
+
+// THUMBNAIL BANNER
+
+.banner-container a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 
 .banner-container.thumb h2 {
@@ -89,10 +115,18 @@
   padding: 2px 10px;
   font-size: 14px;
 
+
 }
 
 
-.banner-container.thumb .overlay {
+.banner-container.thumb .vignette {
   cursor: pointer;
 }
 
+.fa-info-circle{
+  color: $info-blue;
+  font-size: $ml-fs;
+  position: absolute;
+  left: 8px; top: 8px;
+  z-index: 11
+}

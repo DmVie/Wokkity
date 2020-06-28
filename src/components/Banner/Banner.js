@@ -1,14 +1,32 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './Banner.scss';
+import Gallery from '../../services/Gallery/Gallery';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Header from '../Header/Header';
 
+/* A Banner is just an image that covers an element, there are 3 types
+  1: The main site banner ( ie the landing page picture ).
+  2: Recipe thumbnails also have a banner img clicking them takes you to the recipe page.
+  3: The recipe page banner at the top of each recipe page
+
+  Recipe thumbnail banners have additional functionality with an overlay that on hover wll display information about the recipe.
+
+  The individual recipe pages banner will have a tab that allows for sliding a gallery in on top of the banner.  
+
+
+*/
+
 const Banner = (props) => {
+  console.log('main image ', props.mainImg && props.mainImg.med)
+  console.log('The banner props', props)
   return (
     <div className={`banner-container ${props.type}`}>
+      {props.type === 'thumb' && <FontAwesomeIcon onClick={props.toggleShowOverlay} icon="info-circle" />}
+      {props.type === "page" && props.type !== "siteBanner" && <Gallery gallery={props.gallery}/>}
       <img className="banner-bg" src={props.img} alt={props.title} />
-      <div className="overlay">
+      <div className="vignette">
         <BannerOverlayContent {...props} />
       </div>        
     </div>
@@ -16,20 +34,22 @@ const Banner = (props) => {
 }
 
 
-
 const BannerOverlayContent = (props) => {
-  console.log('banner overlay content props ', props)
 
   if(props.type === 'thumb') {
     return (
-      <div>
-        <Link to={`recipe/${props.id}/ingredients`}>
-          <h2>{props.title}</h2>
-          { props.shortDesc && <p>{props.shortDesc}</p> }
-        </Link>
-      </div>
+      <Link to={`recipe/${props.id}/ingredients`} onMouseEnter={props.mouseInEl} onMouseLeave={props.mouseOutEl}>
+        <h2>{props.title}</h2>
+        <div className="overlay">
+          <div>      
+            <h2>{props.title}</h2>      
+            { props.shortDesc && <p>{props.shortDesc}</p> }
+          </div>
+        </div>
+      </Link>
+      
     )
-  } else if (props.type === 'page') {
+  } else if (props.type === 'page' || props.type === 'siteBanner') {
     return (
       <>
         <Header />

@@ -1,5 +1,13 @@
+@import '../../styles/sass/base.scss';
+
 ul.thumb-list-container li {
   list-style: none;
   padding: 0;
+  margin-top: 20px;
 }
 
+
+ul.thumb-list-container .overlay p {
+  margin-top: 2px;
+  color: $off-white;
+}

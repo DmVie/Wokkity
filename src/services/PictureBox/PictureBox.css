@@ -1,5 +1,14 @@
+.picture-box {
+  position: absolute;
+  background: rgba(0,0,0,.7);
+
+  top: 0;
+  left: 0;
+}
+
 div.picture-window {
-  width: 90vw;
+  width: 100vw;
+  height: auto;
   overflow: hidden;
   display:flex;
   position: relative;

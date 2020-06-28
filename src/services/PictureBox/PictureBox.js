@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react'
 
 import './PictureBox.css';
 
-const PictureBox = ({images = []}) => {
+const PictureBox = ({images = [], index}) => {
 
   const [ pointer, setPointer ] = useState(0);
 
   useEffect(() => {
     document.querySelector('.taper').style.width = images.length * 100 + 'vw';
+    if(index) {
+      setPointer(index);
+      shift("right")
+    }
   },[])
 
   const shift = (dir) => {

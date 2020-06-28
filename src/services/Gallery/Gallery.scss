@@ -1,0 +1,80 @@
+ .gallery-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  color: rgb(175, 175, 175);
+  background: rgb(43, 43, 43);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+section.gallery-container p {
+  margin: 0 20px;
+}
+
+ul.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  align-content: flex-start;
+  width: 100%;
+  margin: 0;
+}
+
+ul.gallery-list  div  {
+  width: 25%;
+  overflow: hidden;
+  align-content: flex-start;
+}
+
+ul.gallery-list li {
+  border: 5px solid rgb(43, 43, 43);
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.gallery-vignette {
+  background: rgb(255,255,255);
+  background: -moz-radial-gradient(circle, rgba(255,255,255,0) 35%, rgba(0,0,0,0.9364788151588761) 100%);
+  background: -webkit-radial-gradient(circle, rgba(255,255,255,0) 35%, rgba(0,0,0,0.9364788151588761) 100%);
+  background: radial-gradient(circle, rgba(255,255,255,0) 35%, rgba(0,0,0,0.9364788151588761) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#000000",GradientType=1);
+}
+
+
+
+.gallery-tab-true,
+.gallery-tab-false {
+  position: absolute;
+  bottom: 0;
+  background: red;
+  padding: 12px;  
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px inset rgba(0,0,0,.7);
+  right: -67px;
+  border-radius: 0 8px 8px 0;
+  transition: right .5s .5s ease;
+}
+
+.gallery-tab-true {
+  right: 0;
+  border-radius: 8px 0px 0px 8px;
+}
+
+
+
+.gallery-tab:active {
+  box-shadow: 3px 2px 8px inset rgba(0,0,0,.9);
+  font-size: 1.1rem;
+  border: 2px solid rgb(37, 37, 37);
+}
+

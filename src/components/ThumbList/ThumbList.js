@@ -17,10 +17,9 @@ const ThumbList = (props) => {
         {
           props.recipes.length === 0 && (<p>No recipes have been added yet,  we're working on it! :)</p>)
         }
-        {
- 
+        { 
           props.recipes.map((recipe) => {
-            return <ThumbListItem recipe={recipe} key={recipe.id}/>
+            return <ThumbListItem title={recipe.title} img={recipe.bannerImg.med} shortDesc={recipe.shortDesc} key={recipe.id} id={recipe.id}/>
           })
         }
       </ul>

@@ -7,8 +7,8 @@ import ThumbList from '../../ThumbList/ThumbList';
 
 const HomePage = () => {
   return (
-    <div class="landing-page-banner">
-      <Banner title="Wokkiti" type="page" img="https://wokkiti.s3-ap-southeast-1.amazonaws.com/recipes/Thai+Green+Curry+Soup/green+curry+soup+banner.jpg"/>
+    <div className="landing-page">
+      <Banner title="Wokkiti" type="siteBanner" img="https://wokkiti.s3-ap-southeast-1.amazonaws.com/recipes/Thai+Green+Curry+Soup/Green-Curry1-aspect-ratio-large.jpg"/>
       <h2 className="thumb-list-title">Recipes</h2>
       <ThumbList />
     </div>
