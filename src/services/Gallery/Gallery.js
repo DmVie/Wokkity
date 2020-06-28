@@ -48,9 +48,9 @@ const Gallery = ({gallery =[]}) => {
                   return (
                   <div>
                     <li key={index}> 
-                      <img src={`${pic.square}`} alt={pic.name} onClick={() => togglePictureBox(true, index)}/>
+                      <img src={`${pic.square}`} alt={pic.name} />
                     </li>
-                    <div class="gallery-vignette"></div>
+                    <div className="gallery-vignette" onClick={() => togglePictureBox(true, index)}></div>
                   </div>
                   )
                 })
