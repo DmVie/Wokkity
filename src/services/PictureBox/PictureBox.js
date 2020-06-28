@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
 import './PictureBox.css';
+import Button from '../../components/Button/Button';
 
-const PictureBox = ({images = [], index}) => {
+const PictureBox = ({images = [], index, ...rest}) => {
 
-  const [ pointer, setPointer ] = useState(0);
+  const [ pointer, setPointer ] = useState(index-1);
 
   useEffect(() => {
     document.querySelector('.taper').style.width = images.length * 100 + 'vw';
@@ -14,9 +15,10 @@ const PictureBox = ({images = [], index}) => {
     }
   },[])
 
+
   const shift = (dir) => {
 
-    // I need to update the state and then use this new state value right away however as i understand it the state value is not available till next render, this caused a lag in the value of my pointer always being one behind.  The only way I could think is just to create another variable internalPOinter which is incremeneted immediately and then used wherever in the function I need value.
+    // I need to update the state and then use this new state value right away however as i understand it the state value is not available till next render, this caused a lag in the value of my pointer always being one behind.  The only way I could think is just to create another variable internalPOinter which is incremeneted immediately and then used wherever in the function I need an accurate value right away.
 
     // Also need to find a way to refactor below as the duplicate code is annoying
   
@@ -53,7 +55,10 @@ const PictureBox = ({images = [], index}) => {
             images.map((img) => {
               return (
                 <li>  
-                  <img src={img} alt="picture box image" />
+                  <img src={img.med} alt={img.name} />
+                  <Button class="button button--red" onClick={() => {
+                    rest.togglePictureBox(false, null)
+                  }}>Close Gallery</Button>
                 </li>
               )
             })

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 
+@import '../../styles/sass/base.scss';
+
 html {
   font-size: 62.5%;
 }
@@ -11,6 +13,7 @@ body {
   line-height: 1.7;
   letter-spacing: .7px;
   color: rgb(39, 39, 39);
+  position: relative;
 }
 
 a {
@@ -51,3 +54,6 @@ li.overlay--on .overlay {
   display: block
 }
 
+.button {
+
+}

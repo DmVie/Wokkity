@@ -1,11 +1,10 @@
 import React, { useState }  from 'react'
 import { useSpring, animated } from 'react-spring';
 import './Gallery.scss';
+import Modal from '../Modal/Modal';
 import PictureBox from '../PictureBox/PictureBox';
 
 const Gallery = ({gallery =[]}) => {
-
-  console.log('gallery :::: ',  gallery)
 
   const [ showGallery, setShowGallery ] = useState(false);
   const [ showPictureBox, setShowPictureBox ] = useState({
@@ -30,6 +29,7 @@ const Gallery = ({gallery =[]}) => {
     });
     console.log('Wanted picture with index ', index)
   }
+
 
 
   const [props, set] = useSpring(() => ({ transform: 'translateX(-100%)', config: { mass: 3, tension: 350, friction: 50 } }))
@@ -58,7 +58,11 @@ const Gallery = ({gallery =[]}) => {
             </ul>
             <div className={`gallery-tab-${showGallery}`} onClick={toggleShowGallery}
             >{showGallery ? 'Close' : 'Gallery'}</div> 
-            {showPictureBox.show && <PictureBox images={gallery} index={showPictureBox.index} />}
+            {showPictureBox.show && ( 
+              <Modal>
+                <PictureBox images={gallery} index={showPictureBox.index} togglePictureBox={togglePictureBox} />
+              </Modal>
+            )}            
           </animated.div>
     
     

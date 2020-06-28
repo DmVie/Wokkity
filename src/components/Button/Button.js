@@ -4,12 +4,12 @@ import './Button.scss';
 
 const Button = (props) => { 
   const {
-    text,
+    children,
     ...rest
   } = props
 
   return (
-    <button className="button button--btn-transparent--red-sides" {...rest}>{text}</button>
+    <button {...rest}>{children}</button>
   )
 }
 

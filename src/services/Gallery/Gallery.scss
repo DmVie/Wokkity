@@ -1,4 +1,6 @@
- .gallery-container {
+@import '../../styles/sass/base.scss';
+
+.gallery-container {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -36,8 +38,7 @@ ul.gallery-list > div  {
   overflow: hidden;
   align-content: flex-start;
   position: relative;
-  margin: .5vw; /* .5 on each side is 1vw total plus the 24 above so each image takes up 1/4 width, for a total of 4 on each row.*/
-  
+  margin: .5vw; /* .5 on each side is 1vw total plus the 24 above so each image takes up 1/4 width, for a total of 4 on each row.*/  
 }
 
 
@@ -67,7 +68,7 @@ img {
 .gallery-tab-false {
   position: absolute;
   bottom: 0;
-  background: red;
+  background: $bright-red;
   padding: 12px;  
   color: white;
   font-size: 1.2rem;

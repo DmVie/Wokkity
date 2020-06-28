@@ -1,0 +1,11 @@
+#modal-root > div {
+  position: absolute;
+  height: 100%;
+  display: block;
+  width: 100vw;
+  background:rgba(0,0,0, .8);
+  top: 0;
+  z-index: 49;
+  left: 0;
+
+}

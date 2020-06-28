@@ -29,9 +29,9 @@ const Header = (props) => {
       <div>
       {
         props.isAuthenticated ? (
-          <Button text="Log Out" onClick={startLogout} />
+          <Button className="button button--transparent--red-sides" onClick={startLogout}>log Out</Button>
         ) : (
-          <Button text="Log In" onClick={startLogin} />
+          <Button className="button button--transparent--red-sides" onClick={startLogin}>Log In</Button>
         )
       }
         
