@@ -25,7 +25,7 @@ const Banner = (props) => {
       {props.type === "page" && props.type !== "siteBanner" && <Gallery gallery={props.gallery}/>}
       <img className="banner-bg" src={props.img} alt={props.title} />
       <div className="vignette">
-        <BannerOverlayContent {...props} />
+        <BannerOverlayContent {...props} />    
       </div>        
     </div>
   )

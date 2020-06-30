@@ -5,8 +5,8 @@ $s-fs: 1.6rem;
 $m-fs: 2rem;
 $ml-fs: 2.4rem;
 $l-fs: 2.8rem;
-$xl-fs: 5rem;
-$xxl-fs: 7rem;
+$xl-fs: 3.5rem;
+$xxl-fs: 5rem;
 
 $off-white: rgb(206, 206, 206);
 $red: rgb(161, 55, 55);
@@ -24,6 +24,9 @@ h1, h2, h3 {
 
 h1 {
   font-size: $l-fs;
+  @media (min-width: '375px') {
+    font-size: $xl-fs;
+  }
  }
 
 h2 {
