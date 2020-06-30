@@ -9,7 +9,7 @@ import { firebase } from './firebase/firebase';
 
 import configureStore from './store/configureStore';
 
-import './localStorage seed-data/seed'
+// import './localStorage seed-data/seed'
 
 // Composite Component Imports
 import LoadingPage from './components/Pages/LoadingPage/LoadingPage'; 
