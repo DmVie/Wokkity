@@ -7,4 +7,4 @@ app.get('/', function(req, res) {
 });
 
 const PORT = process.env.PORT || 9000
-app.listen(9000, () => console.log('Ole cloth ears is listening on port ', PORT));
+app.listen(PORT, () => console.log('Ole cloth ears is listening on port ', PORT));
