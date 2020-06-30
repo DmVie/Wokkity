@@ -19,8 +19,6 @@ import Header from '../Header/Header';
 */
 
 const Banner = (props) => {
-  console.log('main image ', props.mainImg && props.mainImg.med)
-  console.log('The banner props', props)
   return (
     <div className={`banner-container ${props.type}`}>
       {props.type === 'thumb' && <FontAwesomeIcon onClick={props.toggleShowOverlay} icon="info-circle" />}
@@ -53,9 +51,7 @@ const BannerOverlayContent = (props) => {
     return (
       <>
         <Header />
-        <div>
-          <h1>{props.title}</h1>
-        </div>
+        <h1>{props.title}</h1>
       </>
     )
   }

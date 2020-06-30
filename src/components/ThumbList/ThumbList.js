@@ -12,7 +12,7 @@ import { startSetRecipes} from '../../actions/recipes'
 const ThumbList = (props) => {
 
   return (
-    <div>
+   
       <ul className="thumb-list-container">
         {
           props.recipes.length === 0 && (<p>No recipes have been added yet,  we're working on it! :)</p>)
@@ -23,7 +23,7 @@ const ThumbList = (props) => {
           })
         }
       </ul>
-    </div>
+   
   )
 }
 

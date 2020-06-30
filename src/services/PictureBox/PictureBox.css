@@ -30,6 +30,13 @@ div.picture-window ul.taper li img{
   height: auto;
 }
 
+div.picture-window ul.taper li .img-tag {
+  
+  top: 10px;
+  left: 10px;
+  color: white;
+}
+
 div.left-nav-box,
 div.right-nav-box {
   position: absolute;

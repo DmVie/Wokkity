@@ -38,6 +38,7 @@ ul.gallery-list > div  {
   overflow: hidden;
   align-content: flex-start;
   position: relative;
+  cursor: pointer;
   margin: .5vw; /* .5 on each side is 1vw total plus the 24 above so each image takes up 1/4 width, for a total of 4 on each row.*/  
 }
 

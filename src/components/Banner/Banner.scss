@@ -47,6 +47,7 @@
 }
 
 
+
 /* .page refers to banner that take up a whole section of the screen, like the banner picture at the top of each recipe page
 
 .siteBanner is the main site picture on the home page,  the splash screen as it were - the first thing that user sees when they visit the site
@@ -57,25 +58,34 @@
 /* 
   Home Page main Banner
 */
+.banner-container.siteBanner,
+.banner-container.page {
+  height: 60vh;
+  width: auto;
+}
 
+.banner-container.siteBanner > img,
+.banner-container.page > img {
+  height: 100%;
+  width: auto;
+  position: relative;
+  left: -150px;
+}
+
+
+.banner-container.siteBanner h1,
+.banner-container.page h1 {
+   margin-top: 90px;
+}
 
 .banner-container.siteBanner h1 {
   font-size: 5rem;
+   @media (min-width: $tablet) {
+     font-size: 8rem;
+   }
 }
 
-.banner-container.siteBanner,
-.banner-container.page {
-  min-height: 50vh
-}
 
-.banner-container.siteBanner img.banner-bg ,
-.banner-container.page img.banner-bg {
-  /* small device */
-  height: 60vh;
-  width: auto;
-  position: relative;
-  left: -155px;
-}
 
 .banner-container.siteBanner header,
 .banner-container.page header{
@@ -86,11 +96,14 @@
 
 .banner-container.siteBanner h1,
 .banner-container.page h1{
-  margin-top: 120px;
   display: inline-block;
   background: rgba(0,0,0,0.4);
   padding: 2px 10px;
   border-bottom: 3px solid $red;
+    @media (min-width: '500px') {
+      padding: 2px 40px;
+      
+    }
 
 }
 
@@ -98,25 +111,31 @@
 
 .banner-container a {
   display: inline-block;
-  width: 100%;
   height: 100%;
+  width: 90%;
+  margin: 0 auto;
 }
 
-.banner-container.thumb h2 {
+.banner-container.thumb h2{
   display: inline-block;
   background: rgba(0,0,0,0.2);
   padding: 2px 10px;
   border-bottom: 1px solid $red;
-  margin-bottom: 4px
+  margin-bottom: 4px;
+  @media (min-width: '400px') {
+    font-size: $ml-fs
+  }
+  @media (min-width: $tablet) {
+    font-size: $m-fs
+  }  
 }
 
 .banner-container.thumb p {
   background: rgba(0,0,0,0.4);
   padding: 2px 10px;
   font-size: 14px;
-
-
 }
+
 
 
 .banner-container.thumb .vignette {

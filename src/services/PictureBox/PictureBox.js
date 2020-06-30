@@ -50,11 +50,12 @@ const PictureBox = ({images = [], index, ...rest}) => {
       <div className="picture-window">
         <div className="left-nav-box" onClick={() => shift('left')}><div>&lt;</div></div>
         <div className="right-nav-box" onClick={() => shift('right')}><div>&gt;</div></div>
-        <ul class="taper">
+        <ul className="taper">
           {
             images.map((img) => {
               return (
                 <li>  
+                  <div className="img-tag">{img.name}</div>
                   <img src={img.med} alt={img.name} />
                   <Button class="button button--red" onClick={() => {
                     rest.togglePictureBox(false, null)

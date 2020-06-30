@@ -54,6 +54,10 @@ li.overlay--on .overlay {
   display: block
 }
 
-.button {
-
+.page-content {
+  width: 90vw;
+  margin: 0 auto;
+  @media (min-width: $tablet) {
+    width: 90vw;
+  }
 }
