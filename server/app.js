@@ -1,14 +1,10 @@
 const express = require('express');
-
+const path = require('path');
 const app = express();
-require('dotenv').config();
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
-const PORT = process.env.PORT || 5000;
-require('./db-connect');
-
-
-
-
-app.listen(PORT, () => {
-  console.log('Ole cloth ears is listening on port ', PORT);
-})
+const PORT = process.env.PORT || 9000
+app.listen(PORT, () => console.log('Server up on port ', PORT));
