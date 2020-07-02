@@ -8,14 +8,20 @@ const recipeSchema = new mongoose.Schema({
   },
   shortDesc: {
     type: String,
-    trim: true
+    trim: true,
+    required: [true, 'A Short Description of the recipe is required']
   },
-  description: {
+  desc: {
     type: String,
     trim: true
   },
-  img: {
-    type: String
+  bannerImg: {
+    med: {
+      type: String
+    },
+    large: {
+      type: String
+    }
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
@@ -23,12 +29,32 @@ const recipeSchema = new mongoose.Schema({
     ref: 'User'
   },
   ingredients: [{
-    ingredient
+    name: {
+      type: String,
+      amount: String,
+      required: [true, 'Recipes need ingredients!']
+    },
+    amount: {
+      type: String,
+      required: [true, 'Please provide the amount of ingredient']
+    }
   }],
-  method: {
-    type: String,
-    trim: true
-  }
+  preparation: [String],
+  method: [String],
+  notes: [String],
+  imgs: [{
+    name: {
+      type: String, 
+      required: [true, 'Images must have a name'],
+      trim: true
+    },
+    square: {
+      type: String
+    },
+    med: {
+      type: String
+    } 
+  }]
 },{ timestamps: true})
 
 const Recipe = mongoose.model('Recipe', recipeSchema)

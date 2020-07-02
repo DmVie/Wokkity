@@ -46,8 +46,8 @@ const Gallery = ({gallery =[]}) => {
               {
                 gallery.map((pic, index) => {
                   return (
-                  <div>
-                    <li key={index}> 
+                  <div key={index}>
+                    <li> 
                       <img src={`${pic.square}`} alt={pic.name} />
                     </li>
                     <div className="gallery-vignette" onClick={() => togglePictureBox(true, index)}></div>

@@ -9,8 +9,6 @@ import { firebase } from './firebase/firebase';
 
 import configureStore from './store/configureStore';
 
-// import './localStorage seed-data/seed'
-
 // Composite Component Imports
 import LoadingPage from './components/Pages/LoadingPage/LoadingPage'; 
 
@@ -26,7 +24,6 @@ let hasRendered = false;
 
 // Start off with the loader
 ReactDOM.render(<LoadingPage />, document.getElementById('root'))
-
 const renderApp = () => {
   if(!hasRendered) {
     store.dispatch(startSetRecipes()).then(() => {

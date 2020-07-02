@@ -4,7 +4,7 @@ const MethodList = (props) => {
   return (
     <ol>
       {
-        props.method.map((item) => <li>{item}</li>)
+        props.method.map((item, index) => <li key={index}>{item}</li>)
       }
     </ol>
   )

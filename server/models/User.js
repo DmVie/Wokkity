@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
 
 const userSchema = new mongoose.Schema({
-  name: {
+  username: {
     type: String,
     required: [true, 'Name is required'],
     trim: true,
@@ -13,25 +14,27 @@ const userSchema = new mongoose.Schema({
     trim: true,
     unique: true,
     validate(value) {
-      if(!isEmail) {
+      if(!validator.isEmail(value)) {
         throw new Error('Invalid email address, please check and try again')
       }
     },
-    password: {
-      type: String,
-      required: [true, 'Password is a required field'],
-      minlength: [5, 'Passwords need to be a minimum of 5 characters in length'],
-      tokens: [{
-        token: {
-          type: String,
-          required: true
-        }
-      }]
-    }
-
+  },
+  password: {
+    type: String,
+    required: [true, 'Password is a required field'],
+    minlength: [5, 'Passwords need to be a minimum of 5 characters in length'],
+    tokens: [{
+      token: {
+        type: String,
+        required: true
+      }
+    }]
+  },
+  avatar: {
+    type: String
   }
 }, {timestamps: true})
 
-const User = mongoose.model('User', userSchame);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

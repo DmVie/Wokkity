@@ -26,4 +26,5 @@ yarn-error.log*
 .env
 
 # seed-data
-localStorage seed-data
+src/seed-data
+server/mongodbSeed.js

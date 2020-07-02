@@ -13,7 +13,7 @@ const SwitchBox = ({recipe}) => {
 
   const [state, setState ] = useState('ingredients')
 
-  const pants = (isActiveTab) => {
+  const activeTab = (isActiveTab) => {
     setState(isActiveTab)
 
   } 
@@ -21,16 +21,16 @@ const SwitchBox = ({recipe}) => {
   return (
     <section className="switch-box-container">
       <div className="switch-box-header">
-        <Link onClick={() => pants('ingredients')} to={`/recipe/${recipe.id}/ingredients`} className={state === 'ingredients' ? "activeTab" : ""}>Ingredients</Link>
-        <Link onClick={() => pants('prep')} to={`/recipe/${recipe.id}/preparation`} className={state === 'prep' ? "activeTab" : ""}>Prep</Link>
-        <Link onClick={() => pants('method')} to={`/recipe/${recipe.id}/method`} className={state === 'method' ? "activeTab" : ""}>Method</Link>
+        <Link onClick={() => activeTab('ingredients')} to={`/recipe/${recipe._id}/ingredients`} className={state === 'ingredients' ? "activeTab" : ""}>Ingredients</Link>
+        <Link onClick={() => activeTab('prep')} to={`/recipe/${recipe._id}/preparation`} className={state === 'prep' ? "activeTab" : ""}>Prep</Link>
+        <Link onClick={() => activeTab('method')} to={`/recipe/${recipe._id}/method`} className={state === 'method' ? "activeTab" : ""}>Method</Link>
       </div>
-      <section class="switch-box-content">
-        <Route path={`/recipe/${recipe.id}/ingredients`}   render={(routeProps) => (
+      <section className="switch-box-content">
+        <Route path={`/recipe/${recipe._id}/ingredients`}   render={(routeProps) => (
     <IngredientsList {...routeProps} ingredients={recipe.ingredients} />
   )}/>
-        <Route path={`/recipe/${recipe.id}/preparation`} render={(routeProps) => (<PreparationList {...routeProps} preparation={recipe.preparation} />) } />
-        <Route path={`/recipe/${recipe.id}/method`} render={(routeProps) => (<MethodList {...routeProps} method={recipe.method} />)}/>      
+        <Route path={`/recipe/${recipe._id}/preparation`} render={(routeProps) => (<PreparationList {...routeProps} preparation={recipe.preparation} />) } />
+        <Route path={`/recipe/${recipe._id}/method`} render={(routeProps) => (<MethodList {...routeProps} method={recipe.method} />)}/>      
       </section>
 
     </section>

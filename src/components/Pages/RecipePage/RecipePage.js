@@ -5,7 +5,6 @@ import './recipePage.css';
 import Banner from '../../Banner/Banner'
 
 import SwitchBox from '../../../services/SwitchBox/SwitchBox'
-import PictureBox from '../../../services/PictureBox/PictureBox'
 
 function ScrollToTopOnMount() {
   useEffect(() => {
@@ -34,7 +33,7 @@ const RecipePage = ({recipe}) => {
             <hr />
             <ul>
               {
-                recipe.notes.map((item) => <li>{item}</li>)
+                recipe.notes.map((item, index) => <li key={index}>{item}</li>)
               }
             </ul>
           </section>
@@ -48,7 +47,7 @@ const mapStateToProps = (state, rest) => {
   console.log(state);
   console.log('rest ', rest)
   return {
-    recipe: state.recipes.find((recipe) => recipe.id === rest.match.params.id)
+    recipe: state.recipes.find((recipe) => recipe._id === rest.match.params.id)
   }
 }
 

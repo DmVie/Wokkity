@@ -9,13 +9,10 @@ const ThumbListItem = ({id, title, img, shortDesc}) => {
   const [state, setState ] = useState('overlayOff')
 
   const mouseInEl = () => {
-    console.log('mouse entered element')
-    setState('overlayOn')
-    
+    setState('overlayOn')    
   }
   
   const mouseOutEl = () => {
-    console.log('mouse left element')
     setState('overlayOff')
   }
 

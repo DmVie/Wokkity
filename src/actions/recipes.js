@@ -4,9 +4,9 @@ export const startSetRecipes = () => {
   return (dispatch, getState) => {
     return new Promise((resolve, reject) => {
       try {
-        const recipes = JSON.parse(localStorage.getItem('recipes'))
-
-        dispatch(setRecipes(recipes || []));  //catches localStorage returning null when no storage is set.
+        fetch('/api/v1/recipes')
+        .then(response => response.json())
+        .then(recipes => dispatch(setRecipes(recipes.payload || [])));
         resolve();
       } catch (e) {
         reject(e.message);
@@ -20,4 +20,5 @@ const setRecipes = (recipes) => {
     type: 'SET_RECIPES',
     recipes
   }
+  
 }
