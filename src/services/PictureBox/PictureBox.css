@@ -11,7 +11,7 @@
 div.picture-window {
   width: 100vw;
   height: auto;
-  overflow: hidden;
+
   display:flex;
   position: relative;
 }
