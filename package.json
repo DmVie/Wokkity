@@ -32,10 +32,11 @@
   "proxy": "http://localhost:9000",
   "scripts": {
     "start": "node server/app.js",
+    "devReact": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "nodemon server/app.js"
+    "devServer": "nodemon server/app.js"
   },
   "eslintConfig": {
     "extends": "react-app"

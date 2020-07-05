@@ -32,16 +32,19 @@ ul.gallery-list li {
   border: 2px solid rgb(75, 75, 75);
 }
 
-ul.gallery-list > div  {
-  width: 33vw;
-  height: auto;
+ul.gallery-list > div  {  
   overflow: hidden;
   align-content: flex-start;
   position: relative;
   cursor: pointer;
-  margin: .5vw; /* .5 on each side is 1vw total plus the 24 above so each image takes up 1/4 width, for a total of 4 on each row.*/  
+  margin: .5%; /* .5 on each side is 1vw per list item so if 4 imgs per line that's 5vw taken up by margins 95 / 4 is 23.75 so need 23 */  
+  width: 23.75%;
+  height: auto;
+
+
   @media (min-width: $tablet) {
-    width: 18vw;
+     margin: 1%; /*1vw margin for 5 per row is 10vw in total, 90vw left for images 90 / 5 so 18vw*/
+     width: 18%;
   }
 }
 
