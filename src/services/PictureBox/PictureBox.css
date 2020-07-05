@@ -11,9 +11,9 @@
 div.picture-window {
   width: 100vw;
   height: auto;
-
   display:flex;
   position: relative;
+  overflow: hidden;
 }
 
 div.picture-window ul.taper {

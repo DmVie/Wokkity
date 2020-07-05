@@ -5,7 +5,6 @@ const recipeRouter = require('./routes/recipeRoutes');
 
 require('dotenv').config();
 require('./db-connect');
-// require('./mongodbSeed')
 
 app.use(express.json());
 app.use('/api/v1/recipes', recipeRouter);
