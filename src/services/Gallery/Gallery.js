@@ -27,7 +27,6 @@ const Gallery = ({gallery =[]}) => {
       show,
       index
     });
-    console.log('Wanted picture with index ', index)
   }
 
 

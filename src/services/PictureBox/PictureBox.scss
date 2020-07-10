@@ -1,0 +1,54 @@
+@import '../../styles/sass/base.scss';
+
+.picture-box {
+  position: fixed;
+  background: rgba(0,0,0,.7);
+  box-shadow: inset 0 0 5px 5px rgba(0, 0, 0, 0.6);
+  top: 50px
+}
+
+
+.picture-box > div {
+ position: absolute;
+ width: 100vw;
+ height: auto;
+ will-change: transform; 
+}
+
+
+.picture-box > div > div {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  box-shadow: 0 62.5px 125px -25px rgba(50, 50, 73, 0.5), 0 37.5px 75px -37.5px rgba(0, 0, 0, 0.6);
+  border: 5px solid black;
+  @media (min-width: 768px) {
+    border: 20px solid black
+  } 
+}
+
+
+.spring-carousel-img-title {
+  position: absolute;
+  top: -20px;
+  background: rgba(0,0,0, .5);
+  color: rgb(221, 221, 221);
+  font-size: 1.2rem;
+  padding: 0 10px;
+}
+
+.fa-window-close {
+  position: absolute;
+  top: -20px;
+  font-size: 2.5rem;
+  color: $bright-red;
+  right: 20px;
+  &:active {
+    box-shadow: inset 0 0 3px 2px rgba(0,0,0,.8);
+    font-size: 2.25rem
+  }
+}
+
