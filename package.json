@@ -34,7 +34,7 @@
   "proxy": "http://localhost:9000",
   "scripts": {
     "start": "node server/app.js",
-    "devReact": "react-scripts start",
+    "reactDev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
