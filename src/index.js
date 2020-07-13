@@ -25,8 +25,12 @@ let hasRendered = false;
 // Start off with the loader
 ReactDOM.render(<LoadingPage />, document.getElementById('root'))
 const renderApp = () => {
+
   if(!hasRendered) {
-    store.dispatch(startSetRecipes()).then(() => {
+    store.dispatch(startSetRecipes())
+    const unsubscribe = store.subscribe(() => {
+      // Without this method there was a problem if you navigated to a recipe directly via the url eg: http://localhost:3000/recipe/5eff8003158bac1fa452921f/.  the state would be empty in mapStateToProp.  This seems to be because the page was rendered and connected to the store before the reducer had set the store. Running the render code inside subscribe callback has fixed this, although the initial page load is slightly longer... but it also fixes the issue that the page would render before the recipeslist 
+      console.log(store.getState());
       ReactDOM.render(
         <React.StrictMode>
           <Provider store={store}>
@@ -34,11 +38,10 @@ const renderApp = () => {
           </Provider>    
         </React.StrictMode>,
         document.getElementById('root')
-      );
-    })
+      )
+    })        
+    hasRendered = true    
   }
-
-  hasRendered = true
 }
 
 firebase.auth().onAuthStateChanged((user) => {

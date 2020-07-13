@@ -44,7 +44,7 @@ const RecipePage = ({recipe}) => {
 }
 
 const mapStateToProps = (state, rest) => {
-  console.log(state);
+  console.log('what is the state ', state);
   console.log('rest ', rest)
   return {
     recipe: state.recipes.find((recipe) => recipe._id === rest.match.params.id)

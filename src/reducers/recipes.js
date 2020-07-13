@@ -1,5 +1,6 @@
 
 export default (state=[], actions) => {
+  console.log(actions)
   switch( actions.type ) {
 
     case 'SET_RECIPES': 
