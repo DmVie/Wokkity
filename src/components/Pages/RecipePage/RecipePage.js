@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
 
 import './recipePage.css';
-import Banner from '../../Banner/Banner'
-
+import Banner from '../../Banner/Banner';
+import Comments from '../../Comments/Comments';
 import SwitchBox from '../../../services/SwitchBox/SwitchBox'
 
 function ScrollToTopOnMount() {
@@ -13,8 +13,15 @@ function ScrollToTopOnMount() {
   return null
 }
 
+
+
 const RecipePage = ({recipe}) => {
 
+
+  useEffect(() => {
+    // do an async call to get comments count and first up to 10 entries 
+  },[])
+  
   function createMarkup(desc) {
     return {__html: desc}
   }
@@ -37,6 +44,7 @@ const RecipePage = ({recipe}) => {
               }
             </ul>
           </section>
+          <Comments />
         </article>
       </div>    
     </div>
@@ -44,8 +52,6 @@ const RecipePage = ({recipe}) => {
 }
 
 const mapStateToProps = (state, rest) => {
-  console.log('what is the state ', state);
-  console.log('rest ', rest)
   return {
     recipe: state.recipes.find((recipe) => recipe._id === rest.match.params.id)
   }

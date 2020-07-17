@@ -1,7 +1,6 @@
 import React from 'react'
 
 const IngredientsList = (props) => {
-  console.log(props)
   return (
     <ul>
     {

@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
 const validator = require('validator');
 
 const userSchema = new mongoose.Schema({
+  thirdPartyUid: {
+    type: String,
+    required: true,
+    unique: true
+  },
   username: {
     type: String,
     required: [true, 'Name is required'],
@@ -19,22 +25,34 @@ const userSchema = new mongoose.Schema({
       }
     },
   },
-  password: {
-    type: String,
-    required: [true, 'Password is a required field'],
-    minlength: [5, 'Passwords need to be a minimum of 5 characters in length'],
-    tokens: [{
-      token: {
-        type: String,
-        required: true
-      }
-    }]
-  },
+  tokens: [{
+    token: {
+      type: String,
+      required: true,
+    }
+  }],
   avatar: {
     type: String
   }
 }, {timestamps: true})
 
+userSchema.statics.findByCredentials = async function(id, email) {
+  // searh or user 
+  try {
+     return User.findOne({thirdPartyUid: id, email});    
+  } catch (e) {
+    throw new Error(e.message);
+  }
+
+}
+
+userSchema.methods.createAuthToken = function() {
+  const token = jwt.sign({id: this.thirdPartyUid}, process.env.JWT_SECRET, {expiresIn: '2 days'});
+  return token;
+}
+
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
+

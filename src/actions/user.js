@@ -15,7 +15,10 @@ export const login = (uid) => {
 
 export const startLogout = () => {
   return () => {
-    return firebase.auth().signOut();
+    fetch('/api/v1/users/signout').then(() => {
+      console.log('fetch request to sign out')
+      return firebase.auth().signOut();
+    })   
   }
 }
 
