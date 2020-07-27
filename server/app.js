@@ -4,6 +4,7 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const recipeRouter = require('./routes/recipeRoutes');
 const userRouter = require('./routes/userRoutes');
+const commentRouter = require('./routes/commentRoutes');
 
 
 require('dotenv').config();
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use('/api/v1/recipes', recipeRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/comments', commentRouter)
 
 app.use(express.static(path.join(__dirname, '..', 'build')));
 app.get('*', function(req, res) {

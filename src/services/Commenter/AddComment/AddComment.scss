@@ -1,0 +1,34 @@
+@import '../../../styles/sass/base.scss';
+
+.add-comment-container {
+  position: fixed;
+  overflow: hidden;
+  width: 100vw;
+  height: 65vh;
+  background: #272727;
+  color: $off-white;
+}
+
+.add-comment-container > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 1px 5px  3px solid black
+  
+}
+
+.page-number {
+  position: absolute;
+  left: 10px;
+  top: -20px;
+}
+
+.close-add-comment {
+  position: absolute;
+  right: -10px;
+  top: 10px;
+}
+
+.close-add-comment .fa-window-close {
+  cursor: pointer;
+}

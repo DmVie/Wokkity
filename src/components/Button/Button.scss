@@ -33,3 +33,9 @@
   color: white;
   cursor: pointer;
 }
+
+.button--btn-disabled {
+  color: rgb(99, 99, 99);
+  padding: 4px 10px;
+  font-size: $s-fs; 
+}

@@ -17,6 +17,11 @@ const commentSchema = new mongoose.Schema({
     default: Date.now,
     required: true
   },
+  rating: {
+    type: Number,
+    min: 0,
+    max: 5
+  },
   text: {
     type: String,
     trim: true
@@ -25,3 +30,5 @@ const commentSchema = new mongoose.Schema({
 
 
 const Comment = mongoose.model('Comment', commentSchema)
+
+module.exports = Comment;

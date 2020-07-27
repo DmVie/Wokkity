@@ -1,0 +1,25 @@
+@import '../../../../styles/sass/base.scss';
+
+.comment-form-container {
+  background: $black-fade;
+  box-shadow: 0px 5px 10px black;
+  height: 60vh
+}
+
+
+.comment-form-container h1 {
+  padding-top: 30px;
+}
+
+.comment-form-container textarea {
+  background: darken($black-fade, 2%);
+  width: 90%;
+  border: none;
+  color: darken($off-white, 20%);
+  height: 30vh;
+  padding: 10px;
+}
+
+.comment-form-container button {
+  margin-top: 15px
+}

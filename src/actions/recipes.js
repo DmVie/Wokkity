@@ -1,5 +1,3 @@
-
-
 export const startSetRecipes = () => {
   return (dispatch, getState) => {
     return new Promise((resolve, reject) => {
@@ -23,4 +21,41 @@ const setRecipes = (recipes) => {
     recipes
   }
   
+}
+
+export const setRecipeComments = (id, comments) => {
+  return {
+    type: 'SET_RECIPE_COMMENTS',
+    id,
+    comments
+  }
+}
+
+export const startAddComment = (rating, comment, recipeId) => { 
+
+  return (dispatch) => {
+    fetch('/api/v1/comments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      
+      body: JSON.stringify({
+        rating, 
+        comment, 
+        recipeId
+      })
+    })
+    .then((jsonData) => jsonData.json())
+    .then((comment) => dispatch(addComment(comment.comment)) )
+    .catch((e) => console.log(e.message))
+
+  }
+}
+
+export const addComment = (comment)  => {
+  return {
+    type: 'ADD_COMMENT',
+    comment
+  }
 }

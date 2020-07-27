@@ -36,6 +36,19 @@ const userSchema = new mongoose.Schema({
   }
 }, {timestamps: true})
 
+userSchema.methods.toJSON = function () {
+
+  const userObject = this.toObject()
+
+  delete userObject.password;
+  delete userObject.tokens;
+  delete userObject.thirdPartyUid;
+  delete userObject.__v;
+  delete userObject._id;
+  
+  return userObject
+}
+
 userSchema.statics.findByCredentials = async function(id, email) {
   // searh or user 
   try {

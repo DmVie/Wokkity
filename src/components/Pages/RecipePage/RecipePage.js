@@ -1,10 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
 
 import './recipePage.css';
 import Banner from '../../Banner/Banner';
-import Comments from '../../Comments/Comments';
+import Comments from '../../../services/Commenter/Comments/Comments';
+
 import SwitchBox from '../../../services/SwitchBox/SwitchBox'
+
+// Actions
+import { setRecipeComments } from '../../../actions/recipes';
+import getAverageRating from '../../../services/StarSystem/getAverageRating';
 
 function ScrollToTopOnMount() {
   useEffect(() => {
@@ -13,23 +18,42 @@ function ScrollToTopOnMount() {
   return null
 }
 
+const RecipePage = ({recipe, setRecipeComments}) => {
 
+  const [ averageRating, setAverageRating ] = useState(0)   
 
-const RecipePage = ({recipe}) => {
-
-
-  useEffect(() => {
-    // do an async call to get comments count and first up to 10 entries 
-  },[])
-  
   function createMarkup(desc) {
     return {__html: desc}
   }
- 
+
+  useEffect(() => {
+    if(recipe.comments === undefined) {
+      fetch(`/api/v1/comments/${recipe._id}`)
+        .then((jsonData) => { return jsonData.json()})
+        .then((comments) => {
+          setRecipeComments(recipe._id, comments)  
+          setAverageRating(getAverageRating(comments))
+        })
+        .catch((e) => console.log(e.message))
+    }else {
+      setAverageRating(getAverageRating(recipe.comments))
+    }
+    
+  },[recipe.comments])
+
+
   return (
     <div>
       <ScrollToTopOnMount />
-      <Banner  type="page" img={recipe.bannerImg.med} title={recipe.title} gallery={recipe.imgs}/>
+      <Banner  
+        type="page" 
+        img={recipe.bannerImg.med} 
+        title={recipe.title} 
+        gallery={recipe.imgs} 
+        rating={averageRating}
+        noOfRatings={recipe.comments && (recipe.comments.filter((comment) => comment.rating > 0).length)}
+        
+      />
       <div className="content-container">
         <article  className="recipe">
           <section dangerouslySetInnerHTML={createMarkup(recipe.desc)} className="desc">
@@ -44,12 +68,13 @@ const RecipePage = ({recipe}) => {
               }
             </ul>
           </section>
-          <Comments />
+          <Comments id={recipe._id} comments={recipe.comments} />
         </article>
       </div>    
     </div>
   )
 }
+
 
 const mapStateToProps = (state, rest) => {
   return {
@@ -57,4 +82,11 @@ const mapStateToProps = (state, rest) => {
   }
 }
 
-export default connect(mapStateToProps)(RecipePage)
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setRecipeComments: (id, comments) => dispatch(setRecipeComments(id, comments))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecipePage)

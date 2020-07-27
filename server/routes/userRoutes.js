@@ -4,7 +4,6 @@ const authGuard = require('../middleware/authGuard')
 const router = new express.Router();
 
 router.post('/verifyUser', authGuard, async (req, res) => {
-  console.log('GUARD PASSED')
   return res.status(200).send({
     status: 'Authorized'
   })

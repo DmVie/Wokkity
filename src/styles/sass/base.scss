@@ -12,11 +12,15 @@ $off-white: rgb(206, 206, 206);
 $red: rgb(161, 55, 55);
 $bright-red: rgb(241, 42, 42);
 $info-blue: rgba(235, 248, 211, 0.7);
+$black-fade: #1d1d1d;
 
 // Breakpoints: 
 $tablet: 768px;
 $desktop: 1025px;
 
+body {
+  user-select: none;
+}
 
 h1, h2, h3 {
   font-weight: 300;
@@ -33,10 +37,14 @@ h2 {
   font-size: $m-fs
 }
 
-p, a, li  {
+p, a, li, textarea, input  {
   font-size: $s-fs;
 }
 
 ul li {
   list-style: none;
+}
+
+* { 
+  box-sizing: border-box;
 }
