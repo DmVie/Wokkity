@@ -46,12 +46,9 @@ const renderApp = () => {
 
 firebase.auth().onAuthStateChanged((user) => {
   if(!user) {
-    console.log('Status: Signed Out :(')
     store.dispatch(logout())
     renderApp()
   }else {
-    console.log('Status: Signed in :)')
-    console.log('Google user ', user);
     user.getIdToken(true).then((idToken) => {
       fetch('/api/v1/users/verifyUser', {
         method: 'POST',
