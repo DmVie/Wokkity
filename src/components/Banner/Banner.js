@@ -34,7 +34,6 @@ const Banner = (props) => {
 
 
 const BannerOverlayContent = (props) => {
-  console.log('banneroverlay content props ', props)
   if(props.type === 'thumb') {
     return (
       <Link to={`recipe/${props.id}/ingredients`} onMouseEnter={props.mouseInEl} onMouseLeave={props.mouseOutEl}>
@@ -51,7 +50,7 @@ const BannerOverlayContent = (props) => {
   } else if (props.type === 'page' || props.type === 'siteBanner') {
     return (
       <>
-        <Header />
+        <Header routeProps={props.routeProps} />
         <h1>{props.title}</h1>
          {props.type === 'page' &&  props.noOfRatings > 0 && (
            <StarSystem 

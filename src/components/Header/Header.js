@@ -1,23 +1,37 @@
-import React from 'react'
-import './Header.scss';
-
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
+import './Header.scss';
+import Auth from '../Auth/Auth';
+import Login from '../Auth/Login';
+import Modal from '../../services/Modal/Modal';
 import Button from '../Button/Button';
 
 // Action Generators
-import { startLogin, startLogout } from '../../actions/user';
+import { startLogout } from  '../../actions/user';
 import { connect } from 'react-redux';
 
 const Header = (props) => {
 
-  const startLogin = () => {
-    props.startLogin()
+  console.log('Headr props ', props)
+
+  const [ showLoginModal, setShowLoginModal ] = useState(false);
+
+  const cancelLoginModal = () => {
+    document.querySelector('#root').style.filter='none';
+    setShowLoginModal(false)
   }
 
-  const startLogout = () => {
-    props.startLogout();
+  const launchSigninModal = () => {
+    document.querySelector('#root').style.filter='blur(2px)';
+    return (
+      <Modal >
+        <Auth cancelLoginModal={cancelLoginModal}/>
+      </Modal>
+    )
   }
+
 
   return ( 
     <header>
@@ -29,12 +43,16 @@ const Header = (props) => {
       <div>
       {
         props.isAuthenticated ? (
-          <Button className="button button--transparent--red-sides" onClick={startLogout}>log Out</Button>
+          <Button className="button button--transparent--red-sides" onClick={props.startLogout}>Log Out</Button>
         ) : (
-          <Button className="button button--transparent--red-sides" onClick={startLogin}>Log In</Button>
+          <Button className="button button--transparent--red-sides" onClick={() => setShowLoginModal(true)}>Log In</Button>
         )
       }
-        
+
+      {
+        showLoginModal && launchSigninModal()
+      }
+
       </div>
     </header>
   )
@@ -45,7 +63,6 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  startLogin: () => dispatch(startLogin()),
   startLogout: () => dispatch(startLogout())
 })
 

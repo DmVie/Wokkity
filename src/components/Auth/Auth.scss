@@ -1,0 +1,32 @@
+@import '../../styles/sass/base.scss';
+
+.auth-container {
+  width: 80vw;
+  height: 60vh;
+  background: white;
+  margin-top: 10vh;
+  border-radius: 10px;
+  position: relative;
+}
+
+.auth-header {
+  border-radius: 10px 10px 0 0;
+  padding-top: 10px;
+  border-bottom: 1px solid darken($info-blue, 30%);
+  background: $info-blue;
+  .button{
+    position: relative;
+    top: 1.7px;
+    background: rgb(247, 247, 247);
+    font-size: $s-fs;
+    color: rgb(182, 182, 182);
+  }
+  .button:last-child {
+    margin-left: 50px
+  }
+}
+
+
+.auth-content {
+
+}

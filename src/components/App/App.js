@@ -7,8 +7,11 @@ import { faInfoCircle, faWindowClose, faStar as
   faStarSolid, faQuoteRight, faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 import Footer  from '../Footer/Footer'
-
 import AppRouter from '../../routers/AppRouter';
+
+import { createBrowserHistory } from 'history';
+export const history = createBrowserHistory();
+
 library.add(faInfoCircle, faWindowClose, faStar, faStarSolid, faQuoteLeft, faQuoteRight)
 
 function App() {
