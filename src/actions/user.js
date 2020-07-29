@@ -1,5 +1,22 @@
 import { firebase, googleAuthProvider } from '../firebase/firebase';
 
+export const startSignUp = (email, password) => {
+  return () => {
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      if(errorMessage) {
+        console.log('Errrrrrr ', errorCode, errorMessage);
+      }
+    });
+  }
+}
+
+export const signup = () => {
+
+}
+
 export const startLogin = () => {
   return () => {
     return firebase.auth().signInWithPopup(googleAuthProvider);
@@ -12,6 +29,7 @@ export const login = (uid) => {
     uid
   }
 }
+
 
 export const startLogout = () => {
   return () => {
