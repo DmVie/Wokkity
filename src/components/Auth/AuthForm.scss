@@ -1,0 +1,28 @@
+@import '../../styles/sass/base.scss';
+
+.auth-form {
+  background: lighten($off-white, 16%);
+  padding: 10px;
+  
+}
+
+.auth-form > div {
+  margin-top: 10px;
+}
+
+.auth-form input {
+  height: 30px;
+  text-indent: 5px;
+  font-size: $xs-fs;
+  outline: none;
+}
+
+.auth-form input:focus {
+  border: 1px solid #1c88bf;
+}
+
+.auth-form button.button.button--blue {
+  padding: 6px 15px;
+  margin-top: 10px;
+  font-size: $xs-fs;
+}

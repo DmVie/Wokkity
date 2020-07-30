@@ -1,0 +1,9 @@
+@import '../../styles/sass/base.scss';
+
+.signup-container h1 {
+  font-size: $s-fs;
+}
+
+.signup-container > p {
+  font-size: $xs-fs;
+}

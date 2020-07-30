@@ -45,24 +45,29 @@ const renderApp = () => {
 }
 
 firebase.auth().onAuthStateChanged((user) => {
+  
   if(!user) {
     store.dispatch(logout())
     renderApp()
   }else {
     user.getIdToken(true).then((idToken) => {
-      fetch('/api/v1/users/verifyUser', {
-        method: 'POST',
-        body: JSON.stringify({
-          token: idToken, 
-          email: user.email,
-          username: user.displayName,
-          avatar: user.photoURL
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        },
-      })
+      if(user.displayName) {
+        console.log('signing in user via email and password ', user)
+        fetch('/api/v1/users/verifyUser', {
+          method: 'POST',
+          body: JSON.stringify({
+            token: idToken, 
+            email: user.email,
+            username: user.displayName,
+            avatar: user.photoURL
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        })
+      }
     });
+    console.log('I still ran?')
     store.dispatch(login(user.uid))   
     renderApp();
   }

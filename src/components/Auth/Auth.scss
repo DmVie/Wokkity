@@ -2,31 +2,36 @@
 
 .auth-container {
   width: 80vw;
-  height: 60vh;
+  height: 80vh;
   background: white;
-  margin-top: 10vh;
+  margin-top: 5vh;
   border-radius: 10px;
   position: relative;
 }
 
 .auth-header {
   border-radius: 10px 10px 0 0;
-  padding-top: 10px;
+  padding-top: 12px;
   border-bottom: 1px solid darken($info-blue, 30%);
   background: $info-blue;
+  .fa-window-close {
+    right: 2px;
+    top: 2px;
+    font-size: $m-fs
+  }
   .button{
     position: relative;
     top: 1.7px;
     background: rgb(247, 247, 247);
-    font-size: $s-fs;
+    font-size: $xs-fs;
     color: rgb(182, 182, 182);
   }
   .button:last-child {
-    margin-left: 50px
+    margin-left: 20px
   }
 }
 
-
 .auth-content {
-
+  width: 90%;
+  margin: 0 auto;
 }

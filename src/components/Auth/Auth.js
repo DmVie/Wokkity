@@ -7,10 +7,7 @@ import Signup from './SignUp';
 
 const Auth = (props) => {
 
-  console.log('auth props ', props)
-
   const [form, setForm ] = useState('login')
-
 
   return (
     <section className="auth-container">

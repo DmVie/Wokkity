@@ -14,8 +14,6 @@ import { connect } from 'react-redux';
 
 const Header = (props) => {
 
-  console.log('Headr props ', props)
-
   const [ showLoginModal, setShowLoginModal ] = useState(false);
 
   const cancelLoginModal = () => {
