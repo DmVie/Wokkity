@@ -9,13 +9,9 @@
   top: 0px;
   z-index: 50;
   background: rgba(0,0,0, .4);
-  display: flex;
-  justify-content: center;
-  
 }
 
 .divider {
   height: 0;
-  border-top: 1px dotted lightgray
-  ;
+  border-top: 1px dotted lightgray;
 }

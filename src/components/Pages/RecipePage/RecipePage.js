@@ -37,17 +37,17 @@ const RecipePage = ({recipe, setRecipeComments, ...rest}) => {
   }
 
   const switchBoxLinks = [
-    <Link onClick={() => activeTab('ingredients')} to={`/recipe/${recipe._id}/ingredients`} className={state === 'ingredients' ? "activeTab" : ""}>Ingredients</Link>,
-    <Link onClick={() => activeTab('prep')} to={`/recipe/${recipe._id}/preparation`} className={state === 'prep' ? "activeTab" : ""}>Prep</Link>,
-    <Link onClick={() => activeTab('method')} to={`/recipe/${recipe._id}/method`} className={state === 'method' ? "activeTab" : ""}>Method</Link>
+    <Link onClick={() => activeTab('ingredients')} to={`/recipe/${recipe._id}/ingredients`} className={state === 'ingredients' ? "activeTab" : ""} key="1">Ingredients</Link>,
+    <Link onClick={() => activeTab('prep')} to={`/recipe/${recipe._id}/preparation`} className={state === 'prep' ? "activeTab" : ""} key="2">Prep</Link>,
+    <Link onClick={() => activeTab('method')} to={`/recipe/${recipe._id}/method`} className={state === 'method' ? "activeTab" : ""} key="3">Method</Link>
   ]         
 
   const switchBoxRoutes = [
     <Route path={`/recipe/${recipe._id}/ingredients`}   render={(routeProps) => (
       <IngredientsList {...routeProps} ingredients={recipe.ingredients} />
-    )}/>,
-    <Route path={`/recipe/${recipe._id}/preparation`} render={(routeProps) => (<PreparationList {...routeProps} preparation={recipe.preparation} />) } />,
-    <Route path={`/recipe/${recipe._id}/method`} render={(routeProps) => (<MethodList {...routeProps} method={recipe.method} />)}/> 
+    )} key="4"/>,
+    <Route path={`/recipe/${recipe._id}/preparation`} render={(routeProps) => (<PreparationList {...routeProps} preparation={recipe.preparation} />) } key="5" />,
+    <Route path={`/recipe/${recipe._id}/method`} render={(routeProps) => (<MethodList {...routeProps} method={recipe.method} />)} key="6"/> 
   ]
   
   
@@ -65,7 +65,7 @@ const RecipePage = ({recipe, setRecipeComments, ...rest}) => {
       setAverageRating(getAverageRating(recipe.comments))
     }
     
-  },[recipe.comments])
+  },[recipe.comments, recipe._id, setRecipeComments])
 
 
   return (

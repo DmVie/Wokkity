@@ -11,14 +11,16 @@ const Auth = (props) => {
 
   return (
     <section className="auth-container">
-      <div className="auth-header">
-        <FontAwesomeIcon icon="window-close" style={{background: 'white'}} onClick={() => props.cancelLoginModal()}/>
-        <Button className={`button button--tab ${form === 'login' ? 'active' : ''}`} onClick={() => setForm('login')}> Log In</Button>
-        <Button className={`button button--tab ${form === 'signup' ? 'active' : ''}`} onClick={() => setForm('signup')}> Sign Up</Button>
+      <div className="auth-container-wrapper">
+        <div className="auth-header">
+          <FontAwesomeIcon icon="window-close" style={{background: 'white'}} onClick={() => props.cancelLoginModal()}/>
+          <Button className={`button button--tab ${form === 'login' ? 'active' : ''}`} onClick={() => setForm('login')}> Log In</Button>
+          <Button className={`button button--tab ${form === 'signup' ? 'active' : ''}`} onClick={() => setForm('signup')}> Sign Up</Button>
+        </div>
+        <section className="auth-content">
+          {form === 'login' ? <Login /> : <Signup />}
+        </section>
       </div>
-      <section className="auth-content">
-        {form === 'login' ? <Login /> : <Signup />}
-      </section>
     </section>
   )
 }

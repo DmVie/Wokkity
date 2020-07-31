@@ -4,18 +4,21 @@ import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Comment.scss';
 import StarSystem from '../../StarSystem/StarSystem';
-
 import decodeHTML from '../../../utils/decodeHTML';
 
 const Comment = (props) => {
+
   return (
     <section className="comment-container">
       <div className="comment-user-data">
         <div className="user-data-left">
           <div className="comment-avatar">
-            <img src={props.owner.avatar} alt={props.owner.username}/>
+          {
+            props.owner.avatar ? <img src={props.owner.avatar} alt={props.owner.username}/> : <FontAwesomeIcon icon="user-astronaut" />
+          }
+            
           </div>
-          <p>{props.owner.username}</p>
+          <p className="commenter">{props.owner.username}</p>
         </div>
         <div className="user-data-right">
           <div className="comment-posted"> Reviewed: {moment(props.posted).format('DD MMMM, YYYY')}

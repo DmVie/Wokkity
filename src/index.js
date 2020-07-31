@@ -52,7 +52,6 @@ firebase.auth().onAuthStateChanged((user) => {
   }else {
     user.getIdToken(true).then((idToken) => {
       if(user.displayName) {
-        console.log('signing in user via email and password ', user)
         fetch('/api/v1/users/verifyUser', {
           method: 'POST',
           body: JSON.stringify({

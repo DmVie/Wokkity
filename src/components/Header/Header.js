@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import './Header.scss';
 import Auth from '../Auth/Auth';
-import Login from '../Auth/Login';
 import Modal from '../../services/Modal/Modal';
 import Button from '../Button/Button';
 
