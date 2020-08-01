@@ -35,11 +35,9 @@ const AuthForm = (props) => {
           }
         })
         .then((jsonRes) => {
-          console.log(jsonRes)
           return jsonRes.json()
         })
         .then((res) => {
-          console.log('res back to auth form ', res)
           res.username ? props.onSubmit(email, password, res.username) : setErrorMessage([res.error])
         })
         .catch((e) => console.log(e.message))

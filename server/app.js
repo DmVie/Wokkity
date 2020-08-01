@@ -8,7 +8,9 @@ const commentRouter = require('./routes/commentRoutes');
 
 
 require('dotenv').config();
-require('./firebase-admin')
+
+require('./firebase-admin');
+
 require('./db-connect');
 
 app.use(express.json());

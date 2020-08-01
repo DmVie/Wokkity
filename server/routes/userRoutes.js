@@ -23,15 +23,11 @@ router.post('/checkUsername', [
   if(!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array() });
   }
-  console.log('The request body ', req.body)
 
   // Uppercase first char of username.
   const arr = Array.from((req.body.username).toLowerCase());
-  console.log(arr);
   arr.splice(0,1, req.body.username.charAt(0).toUpperCase());
   const username = arr.join("");
-
-  console.log('username server side ', username)
 
   try {
     const result = await User.findOne({username})
