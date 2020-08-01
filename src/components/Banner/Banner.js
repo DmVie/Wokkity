@@ -50,7 +50,7 @@ const BannerOverlayContent = (props) => {
   } else if (props.type === 'page' || props.type === 'siteBanner') {
     return (
       <>
-        <Header routeProps={props.routeProps} />
+        <Header {...props} />
         <h1>{props.title}</h1>
          {props.type === 'page' &&  props.noOfRatings > 0 && (
            <StarSystem 

@@ -4,10 +4,16 @@ import './Auth.scss'
 import Button from '../Button/Button';
 import Login from './Login';
 import Signup from './SignUp';
+import { firebase } from '../../firebase/firebase';
 
 const Auth = (props) => {
 
   const [form, setForm ] = useState('login')
+
+  // Set this listener to detect the logged in event and cancel the login modal when the user is signed in
+  firebase.auth().onAuthStateChanged((user) => {
+    if(user) props.cancelLoginModal()
+  })
 
   return (
     <section className="auth-container">

@@ -1,39 +1,79 @@
 import React, { useState } from 'react';
 
 import Button from '../Button/Button';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './AuthForm.scss';
 
 const AuthForm = (props) => {
 
-  const [ email, setEmail ] = useState("");
-  const [ password, setPass ] = useState("");
-  const [ username, setUsername ] = useState("")
+  const [ username, setUsername ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ password, setPassword ] = useState('')
   const [ errorMessage, setErrorMessage ] = useState([])
-  
+  const [ showErrors, setShowErrors ] = useState(true)
+
+
   const onSubmit = (e) => {
-    e.preventDefault()
-    if(!email || !password) {
-       setErrorMessage([...errorMessage, 'Email and Password are both required'])
-    }
+    setShowErrors(true)
+    e.preventDefault();
 
-    if(password.length < 4) {
-       setErrorMessage([...errorMessage, 'Password must a minimum of 4 characters'])
-    }
+    const errors = [];
 
-    if(props.type === 'signup') {
-      if(username.length < 3) {
-        setErrorMessage([...errorMessage, 'Username must be 3 or more characters in length'])
+    props.type === 'signup' && username.length < 3 && errors.push('Username must be more than 3 characters');
+    (!email || !password) && errors.push('Email and Password are both required');
+    password.length < 6 && errors.push('Password must be more than 5 characters')
+
+    setErrorMessage(errors);
+    if(errors.length === 0) {
+      if(props.type === 'signup') {
+        // check if the username is available
+        fetch(`/api/v1/users/checkUsername`, {
+          method: 'POST',
+          body: JSON.stringify({ username }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then((jsonRes) => {
+          console.log(jsonRes)
+          return jsonRes.json()
+        })
+        .then((res) => {
+          console.log('res back to auth form ', res)
+          res.username ? props.onSubmit(email, password, res.username) : setErrorMessage([res.error])
+        })
+        .catch((e) => console.log(e.message))
+      }else {
+       props.onSubmit(email, password).then((res) => {
+        let signinError;
+        if(res === 'auth/wrong-password' || 'auth/user-not-found'){ 
+          signinError = ['This email / password combination is incorrect']
+        }else if(res === 'auth/too-many-requests') {
+          signinError = ['Too many incorrect attempts, please try again later..']
+        }
+        signinError.length > 0 &&  setErrorMessage(signinError)
+       })
       }
     }
-
-   if(errorMessage.length === 0) {
-      props.onSubmit(email, password, username)
-   }    
   }
+
+
 
   return (
     <form className="auth-form" onSubmit={onSubmit}>
+    {
+      showErrors && errorMessage.length > 0 && (
+        <div className="error-container">
+          <FontAwesomeIcon icon="window-close" onClick={() => setShowErrors(false)} />
+          <h2>Error!</h2>
+          <ul>
+            {errorMessage.map((error, index) => {
+              return <li key={index}>{error}</li>
+            })}
+          </ul>
+        </div>
+      )
+    }
      {
        props.type === 'signup' && (
         <div>
@@ -68,7 +108,7 @@ const AuthForm = (props) => {
             id="password" 
             placeholder="Password"
             value={password}
-            onChange={(e) => setPass(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
       </div>
       <div>

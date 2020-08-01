@@ -7,7 +7,7 @@ import StarSystem from '../../StarSystem/StarSystem';
 import decodeHTML from '../../../utils/decodeHTML';
 
 const Comment = (props) => {
-
+  
   return (
     <section className="comment-container">
       <div className="comment-user-data">

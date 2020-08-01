@@ -1,17 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import './Login.scss';
+import { firebase } from '../../firebase/firebase';
 
 import SignInWithGoogleButton from '../Auth/SignInWithGoogleButton';
 import AuthForm from '../Auth/AuthForm';
-import { startGoogleLogin, startEmPassLogin } from '../../actions/user';
+import { startGoogleLogin,  } from '../../actions/user';
 
-const Login = ({startGoogleLogin, startEmPassLogin}) => {
+const Login = ({startGoogleLogin}) => {
 
-  const onSubmit = (email, password) => {
-    console.log('Email is ', email );
-    console.log('Password is ', password);
-    startEmPassLogin(email, password);
+  const onSubmit = async (email, password) => {
+  return firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    console.log(error.code)
+    return error.code
+  });
   }
 
 
@@ -28,8 +30,7 @@ const Login = ({startGoogleLogin, startEmPassLogin}) => {
 
 
 const mapDispatchToProps = (dispatch) => ({
-  startGoogleLogin: () => dispatch(startGoogleLogin()),
-  startEmPassLogin: (email, password) => dispatch(startEmPassLogin(email, password))
+  startGoogleLogin: () => dispatch(startGoogleLogin())
 })
 
 export default connect(undefined, 

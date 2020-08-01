@@ -23,7 +23,6 @@ function ScrollToTopOnMount() {
 
 const RecipePage = ({recipe, setRecipeComments, ...rest}) => {
 
-
   const [ averageRating, setAverageRating ] = useState(0)
   const [state, setState ] = useState('ingredients')
 
@@ -43,11 +42,11 @@ const RecipePage = ({recipe, setRecipeComments, ...rest}) => {
   ]         
 
   const switchBoxRoutes = [
-    <Route path={`/recipe/${recipe._id}/ingredients`}   render={(routeProps) => (
-      <IngredientsList {...routeProps} ingredients={recipe.ingredients} />
+    <Route path={`/recipe/${recipe._id}/ingredients`}   render={(rest) => (
+      <IngredientsList {...rest} ingredients={recipe.ingredients} />
     )} key="4"/>,
-    <Route path={`/recipe/${recipe._id}/preparation`} render={(routeProps) => (<PreparationList {...routeProps} preparation={recipe.preparation} />) } key="5" />,
-    <Route path={`/recipe/${recipe._id}/method`} render={(routeProps) => (<MethodList {...routeProps} method={recipe.method} />)} key="6"/> 
+    <Route path={`/recipe/${recipe._id}/preparation`} render={(rest) => (<PreparationList {...rest} preparation={recipe.preparation} />) } key="5" />,
+    <Route path={`/recipe/${recipe._id}/method`} render={(rest) => (<MethodList {...rest} method={recipe.method} />)} key="6"/> 
   ]
   
   
@@ -78,7 +77,7 @@ const RecipePage = ({recipe, setRecipeComments, ...rest}) => {
         gallery={recipe.imgs} 
         rating={averageRating}
         noOfRatings={recipe.comments && (recipe.comments.filter((comment) => comment.rating > 0).length)}
-        routeProps={{match: rest.match, history: rest.history}}
+        {...rest}
       />
       <div className="content-container">
         <article  className="recipe">
@@ -94,7 +93,7 @@ const RecipePage = ({recipe, setRecipeComments, ...rest}) => {
               }
             </ul>
           </section>
-          <Comments id={recipe._id} comments={recipe.comments} />
+          <Comments id={recipe._id} comments={recipe.comments} {...rest} />
         </article>
       </div>    
     </div>
@@ -103,6 +102,7 @@ const RecipePage = ({recipe, setRecipeComments, ...rest}) => {
 
 
 const mapStateToProps = (state, rest) => {
+
   return {
     recipe: state.recipes.find((recipe) => recipe._id === rest.match.params.id)
   }

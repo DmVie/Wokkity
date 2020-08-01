@@ -4,9 +4,7 @@ import 'normalize.css/normalize.css';
 import App from './components/App/App';
 
 import { Provider } from 'react-redux';
-
 import { firebase } from './firebase/firebase';
-
 import configureStore from './store/configureStore';
 
 // Composite Component Imports
@@ -16,7 +14,6 @@ import LoadingPage from './components/Pages/LoadingPage/LoadingPage';
 import { login, logout } from './actions/user';
 
 import { startSetRecipes } from './actions/recipes'
-
 
 const store = configureStore()
 
@@ -66,7 +63,6 @@ firebase.auth().onAuthStateChanged((user) => {
         })
       }
     });
-    console.log('I still ran?')
     store.dispatch(login(user.uid))   
     renderApp();
   }

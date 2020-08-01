@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 import './Header.scss';
-import Auth from '../Auth/Auth';
-import Modal from '../../services/Modal/Modal';
 import Button from '../Button/Button';
 
 // Action Generators
@@ -12,23 +9,6 @@ import { startLogout } from  '../../actions/user';
 import { connect } from 'react-redux';
 
 const Header = (props) => {
-
-  const [ showLoginModal, setShowLoginModal ] = useState(false);
-
-  const cancelLoginModal = () => {
-    document.querySelector('#root').style.filter='none';
-    setShowLoginModal(false)
-  }
-
-  const launchSigninModal = () => {
-    document.querySelector('#root').style.filter='blur(2px)';
-    return (
-      <Modal >
-        <Auth cancelLoginModal={cancelLoginModal}/>
-      </Modal>
-    )
-  }
-
 
   return ( 
     <header>
@@ -42,18 +22,19 @@ const Header = (props) => {
         props.isAuthenticated ? (
           <Button className="button button--transparent--red-sides" onClick={props.startLogout}>Log Out</Button>
         ) : (
-          <Button className="button button--transparent--red-sides" onClick={() => setShowLoginModal(true)}>Log In</Button>
+          <Button className="button button--transparent--red-sides" onClick={() => props.setShowLoginModal(true)}>Log In / Sign Up</Button>
         )
       }
 
       {
-        showLoginModal && launchSigninModal()
+        props.showLoginModal && props.launchSigninModal()
       }
 
       </div>
     </header>
   )
 };
+
 
 const mapStateToProps = (state) => ({
   isAuthenticated: !!state.user.uid
@@ -65,3 +46,5 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(mapStateToProps, 
   mapDispatchToProps)(Header)
+
+

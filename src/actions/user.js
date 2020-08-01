@@ -40,28 +40,25 @@ export const startEmPassSignUp = (email, password, username) => {
 }
 
 
-// WORKING HERE!! -->  Don't think the emPassSignUp action is necessary - the standard login action can be dispatched  since it's doing the same thing --- setting the uid into store to confirm their auth status of signed in ????
-// export const emPassSignup = () => {
-
-// }
-
 export const startGoogleLogin = () => {
   return () => {
     return firebase.auth().signInWithPopup(googleAuthProvider);
   }
 }
 
-export const startEmPassLogin = (email, password, username) => {
+// export const startEmPassLogin = (email, password) => {
 
-  return () => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .catch(function(error) {
-      const errorCode = error.code;
-      const errorMessage = error.message
-      console.log(errorCode, errorMessage);
-    });
-  }
-}
+//   return () => {
+//     firebase.auth().signInWithEmailAndPassword(email, password)
+//     .catch(function(error) {
+//       console.log('The error s ', error)
+//       const errorCode = error.code;
+//       const errorMessage = error.message
+//       console.log(errorCode, errorMessage);
+//       return errorCode
+//     });
+//   }
+// }  // Originally this was considered an async thunk action but the problem was the google auth would return an error if for example email / password didn't match but there was no way to get that message back to the authForm component where the errors are displayed,  ( that I could find ). In the end since onAuthStateChanged is observing the whole app,  it doesn't matter where the signInWithEmailAndPassword method is triggered.  With that in mind it was moved to login.js and returned any errors back to the form for output in the error box.
 
 export const login = (uid) => {
   return {

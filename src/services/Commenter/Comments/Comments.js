@@ -7,8 +7,7 @@ import Comment from'../Comment/Comment';
 import Modal from '../../Modal/Modal';
 import { connect } from 'react-redux';
 
-const Comments = ({id, comments, signedIn}) => {
-
+const Comments = ({id, comments, signedIn, ...rest}) => {
 
   const [ activateCommentModal, setACM ] = useState(false);
 
@@ -21,7 +20,7 @@ const Comments = ({id, comments, signedIn}) => {
         signedIn ? (
           <Button className="button button--blue add-comment-btn" onClick={canIComment}>Add A Comment / Rating</Button>
         ) : (
-          <Button className="button--btn-disabled add-comment-btn" title={'Sign in to comment'}>Sign in to add a comment / rating</Button>
+          <Button className="button--btn-disabled add-comment-btn" title={'Sign in to comment'} onClick={() => rest.setShowLoginModal(true)}>Sign in to add a comment / rating</Button>
         )
       }
       {
