@@ -35,7 +35,6 @@ router.post('/', [
       path: 'owner'
     }).execPopulate()
 
-    console.log('the comment is  ', comment)
     res.status(201).send({
       status: true,
       msg: 'Comment added succesfully',
@@ -70,7 +69,6 @@ router.get('/:id', async (req, res) => {
           path: 'owner'
         }
     }).execPopulate()
-      console.log('server GET  <= 10 comments ', recipe.comments)
       res.status(200).send(recipe.comments)
     } catch (e) {
     res.status(500).send()

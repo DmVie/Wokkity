@@ -17,7 +17,7 @@ const SpringCarousel = ({images = [], index, ...rest}) => {
         return { x, sc: 1 }
       })
     },400)
-  }, [])
+  }, [set])
 
   const bind = useGesture(({down, delta: [xDelta], direction: [xDir], distance, cancel}) => {
 

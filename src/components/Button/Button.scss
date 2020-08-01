@@ -8,7 +8,7 @@
  padding: 10px 15px;
  &:active {
    box-shadow: inset 0 0 3px 2px rgba(0,0,0,.8);
-   font-size: 1.15rem;
+
  }
 }
 
@@ -34,8 +34,31 @@
   cursor: pointer;
 }
 
+.button--tab {
+  color: #727272;
+  background: white;
+  border-top: 1px solid darken($info-blue, 10%);
+  border-left: 1px solid darken($info-blue, 10%);
+  border-right: 1px solid darken($info-blue, 10%);
+  border-bottom: 1px solid darken($info-blue, 10%);
+  border-radius: 8px 8px 0 0;
+  outline-color: gray;
+  outline: 0;
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.button--tab.active {
+  border-bottom: none;
+  color: #272727;
+  background: white;
+  font-weight: bold;
+}
+
 .button--btn-disabled {
   color: rgb(99, 99, 99);
   padding: 4px 10px;
   font-size: $s-fs; 
+  outline-color: red;
 }

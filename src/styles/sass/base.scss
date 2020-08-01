@@ -1,3 +1,7 @@
+* { 
+  box-sizing: border-box;
+}
+
 // fonts
 $xxs-fs: 1.1rem;
 $xs-fs: 1.3rem;
@@ -11,7 +15,7 @@ $xxl-fs: 5rem;
 $off-white: rgb(206, 206, 206);
 $red: rgb(161, 55, 55);
 $bright-red: rgb(241, 42, 42);
-$info-blue: rgba(235, 248, 211, 0.7);
+$info-blue: rgb(35, 100, 175);
 $black-fade: #1d1d1d;
 
 // Breakpoints: 
@@ -45,6 +49,3 @@ ul li {
   list-style: none;
 }
 
-* { 
-  box-sizing: border-box;
-}

@@ -6,6 +6,7 @@ const admin = require('../firebase-admin');
 const authGuard = async (req, res, next) => {
   try {
     // If the user has a session cookie then pull it
+    console.log('does this run?')
     const cookieToken = req.cookies['auth_token'];
     let user;
     // console.log('cookie token ', cookieToken);
@@ -13,10 +14,13 @@ const authGuard = async (req, res, next) => {
     if(!cookieToken) {
       // Then they must have just signed in / up via google providers
       // pull the google token
-      admin.auth().verifyIdToken(req.body.token)
+      admin.auth().verifyIdToken(req.body.token)          
         .then(async (decodedToken) => {
+          console.log('we\'re passing through here....')
+          console.log('The decoded id ', decodedToken.uid)
           let uid = decodedToken.uid;
           if(!uid) throw new Error('ID required');
+          console.log('the req.body ',  req.body)
           const reqUser = {
             thirdPartyUid: uid,
             username: req.body.username,
@@ -44,7 +48,7 @@ const authGuard = async (req, res, next) => {
           await user.save()
           next()
         })
-        .catch((e) => res.status(401).send())
+        .catch((e) => res.status(401).send(e.message))
     }else { // else there is a cookie token
       // In which case verify the token and extract the id
       const verifiedToken = jwt.verify(cookieToken, process.env.JWT_SECRET);

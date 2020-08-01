@@ -4,9 +4,7 @@ import 'normalize.css/normalize.css';
 import App from './components/App/App';
 
 import { Provider } from 'react-redux';
-
 import { firebase } from './firebase/firebase';
-
 import configureStore from './store/configureStore';
 
 // Composite Component Imports
@@ -16,7 +14,6 @@ import LoadingPage from './components/Pages/LoadingPage/LoadingPage';
 import { login, logout } from './actions/user';
 
 import { startSetRecipes } from './actions/recipes'
-
 
 const store = configureStore()
 
@@ -45,23 +42,26 @@ const renderApp = () => {
 }
 
 firebase.auth().onAuthStateChanged((user) => {
+  
   if(!user) {
     store.dispatch(logout())
     renderApp()
   }else {
     user.getIdToken(true).then((idToken) => {
-      fetch('/api/v1/users/verifyUser', {
-        method: 'POST',
-        body: JSON.stringify({
-          token: idToken, 
-          email: user.email,
-          username: user.displayName,
-          avatar: user.photoURL
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        },
-      })
+      if(user.displayName) {
+        fetch('/api/v1/users/verifyUser', {
+          method: 'POST',
+          body: JSON.stringify({
+            token: idToken, 
+            email: user.email,
+            username: user.displayName,
+            avatar: user.photoURL
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        })
+      }
     });
     store.dispatch(login(user.uid))   
     renderApp();

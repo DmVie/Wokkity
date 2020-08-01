@@ -25,7 +25,7 @@
   width: 80px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid #5a5a5a;
+  border: 1px solid $off-white;
 }
 
 .comment-avatar img {
@@ -33,9 +33,19 @@
   height: 100%;  
 }
 
-.user-data-left p {
-  margin: 10px 0 0 0;
-  font-size: $xxs-fs
+.comment-avatar .fa-user-astronaut {
+  font-size: 6rem;
+  position: relative;
+  top: 5px;
+  color: $off-white;
+  
+}
+
+
+.user-data-left p.commenter {
+  margin: 5px 0 10px 0;
+  font-size: $xs-fs;
+
 }
 
 .comment-data {

@@ -1,0 +1,9 @@
+@import '../../styles/sass/base.scss';
+
+.login-container h1 {
+  font-size: $s-fs;
+}
+
+.login-container > p {
+  font-size: $xs-fs;
+}
