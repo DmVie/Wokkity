@@ -9,7 +9,6 @@ export const startEmPassSignUp = (email, password, username) => {
         displayName: username
       })
       .then(() => {
-        console.log('what is this mofo ', newly.user)
         newly.user.getIdToken(true)
         .then((idToken) => {
           fetch('/api/v1/users/verifyUser', {

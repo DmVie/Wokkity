@@ -6,7 +6,6 @@ import Banner from '../../Banner/Banner';
 import ThumbList from '../../ThumbList/ThumbList';
 
 const HomePage = (props) => {
-  console.log(props)
   return (
     <div className="landing-page">
       <Banner 
