@@ -30,7 +30,6 @@ const AuthForm = (props) => {
         fetch(`/api/v1/users/checkUsername`, {
           method: 'POST',
           body: JSON.stringify({ username }),
-          credentials: 'include',
           headers: {
             'Content-Type': 'application/json'
           }

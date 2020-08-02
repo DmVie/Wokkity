@@ -32,7 +32,7 @@ const authGuard = async (req, res, next) => {
           }
           console.log('the uid is ', uid),
           console.log('this user is', user)
-          console.log('the uid ')
+
           const token = user.createAuthToken()
           console.log('the token is  ', token)
           // Add the token to their list of tokens
@@ -40,7 +40,6 @@ const authGuard = async (req, res, next) => {
           user.tokens = [...user.tokens, { token }]
           // create a cookie
           res.cookie('auth_token', token, {
-            secure: true,
             sameSite: true
           });
           // Add these fields to the request object so that the routes have access to the users details
