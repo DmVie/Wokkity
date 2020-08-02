@@ -34,7 +34,10 @@ const authGuard = async (req, res, next) => {
           // Add the token to their list of tokens
           user.tokens = [...user.tokens, { token }]
           // create a cookie
-          res.cookie('auth_token', token);
+          res.cookie('auth_token', token, {
+            secure: true,
+            sameSite: true
+          });
           // Add these fields to the request object so that the routes have access to the users details
           req.user = user;
           req.token = token;
