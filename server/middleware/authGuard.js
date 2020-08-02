@@ -28,6 +28,8 @@ const authGuard = async (req, res, next) => {
             // This case catches a user who's verified by google but doesn't have an account with us in mongodb - currently not known to us
             user = new User(reqUser);
           }
+          console.log('the uid is ', uid),
+          console.log('this user is', user)
           const token = user.createAuthToken()
           // Add the token to their list of tokens
           user.tokens = [...user.tokens, { token }]
@@ -36,6 +38,8 @@ const authGuard = async (req, res, next) => {
           // Add these fields to the request object so that the routes have access to the users details
           req.user = user;
           req.token = token;
+          console.log('the req.user', req.user)
+          console.log('the req token ', req.token)
           await user.save()
           next()
         })
