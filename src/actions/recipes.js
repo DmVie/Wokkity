@@ -36,6 +36,7 @@ export const startAddComment = (rating, comment, recipeId) => {
   return (dispatch) => {
     fetch('/api/v1/comments', {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
