@@ -7,6 +7,7 @@ const authGuard = async (req, res, next) => {
   try {
     // If the user has a session cookie then pull it
     const cookieToken = req.cookies['auth_token'];
+    console.log('did express receive a cookie? ', cookieToken)
     let user;
 
     if(!cookieToken) {
@@ -34,7 +35,7 @@ const authGuard = async (req, res, next) => {
           const token = user.createAuthToken()
           console.log('the token is  ', token)
           // Add the token to their list of tokens
-          
+
           user.tokens = [...user.tokens, { token }]
           // create a cookie
           res.cookie('auth_token', token, {
@@ -52,7 +53,9 @@ const authGuard = async (req, res, next) => {
         .catch((e) => res.status(401).send(e.message))
     }else { // else there is a cookie token
       // In which case verify the token and extract the id
+      console.log('---------  these logs run because a cookie came in on the request --------------')
       const verifiedToken = jwt.verify(cookieToken, process.env.JWT_SECRET);
+      console.log('what is the verifiedToken: ', verifiedToken)
       const id = verifiedToken.id;
       // check to see if user already exists 
       const verifiedUser = await User.findOne({thirdPartyUid: id, 'tokens.token': cookieToken});
