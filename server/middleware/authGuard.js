@@ -30,9 +30,11 @@ const authGuard = async (req, res, next) => {
           }
           console.log('the uid is ', uid),
           console.log('this user is', user)
+          console.log('the uid ')
           const token = user.createAuthToken()
           console.log('the token is  ', token)
           // Add the token to their list of tokens
+          
           user.tokens = [...user.tokens, { token }]
           // create a cookie
           res.cookie('auth_token', token, {
