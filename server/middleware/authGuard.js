@@ -15,6 +15,7 @@ const authGuard = async (req, res, next) => {
       // pull the google token
       admin.auth().verifyIdToken(req.body.token)          
         .then(async (decodedToken) => {
+          console.log('the decoded token is ', decodedToken)
           let uid = decodedToken.uid;
           if(!uid) throw new Error('ID required');
           const reqUser = {
