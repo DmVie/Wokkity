@@ -65,6 +65,11 @@
 
 }
 
+.banner-container.siteBanner {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+  height: 70vh
+}
+
 .banner-container.siteBanner > img,
 .banner-container.page > img {
   height: 100%;
@@ -174,3 +179,5 @@
   left: 8px; top: 8px;
   z-index: 11
 }
+
+
