@@ -51,7 +51,6 @@ firebase.auth().onAuthStateChanged((user) => {
       if(user.displayName) {
         fetch('/api/v1/users/verifyUser', {
           method: 'POST',
-          // credentials: 'include',
           body: JSON.stringify({
             token: idToken, 
             email: user.email,

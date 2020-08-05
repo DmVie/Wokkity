@@ -51,7 +51,7 @@
 */
 .banner-container.siteBanner,
 .banner-container.page {
-  height: 60vh;
+  height: 70vh;
   width: auto;
     @media (min-width: '568px') {
       height: 100vh;
@@ -64,6 +64,7 @@
     }
 
 }
+
 
 .banner-container.siteBanner > img,
 .banner-container.page > img {

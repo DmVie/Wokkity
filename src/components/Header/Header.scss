@@ -13,12 +13,10 @@ header button {
   top: 6px;
 }
 
-header  img {
-  width: 35px;
-  height: 35px;
+header  svg {
   position: absolute;
-  left: 10%;
-  transform: rotate(30deg)
+  left: 20px;
+  top: -10px !important;
 }
 
 header button {
