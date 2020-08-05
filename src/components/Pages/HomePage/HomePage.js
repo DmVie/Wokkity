@@ -11,7 +11,7 @@ const HomePage = (props) => {
       <Banner 
         title="Wokkiti" 
         type="siteBanner" 
-        img="https://wokkiti.s3-ap-southeast-1.amazonaws.com/recipes/Papaya+Salad/Somtam-1-aspect-ratio-large.jpg"
+        img="https://wokkiti.s3-ap-southeast-1.amazonaws.com/recipes/Thai+Green+Curry+Soup/Green-Curry1-aspect-ratio-large.jpg"
         {...props}
         />
       <section className="page-content">
