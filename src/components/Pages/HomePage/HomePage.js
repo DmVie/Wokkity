@@ -14,8 +14,7 @@ const HomePage = (props) => {
         img="https://wokkiti.s3-ap-southeast-1.amazonaws.com/recipes/Thai+Green+Curry+Soup/Green-Curry1-aspect-ratio-large.jpg"
         {...props}
         />
-      <section className="page-content">
- 
+      <section className="page-content"> 
         <h2 className="thumb-list-title">Recipes</h2>
         <ThumbList />
       </section>
