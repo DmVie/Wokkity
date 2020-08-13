@@ -14,7 +14,7 @@ const Header = (props) => {
     <header>
       <div>
         <Link to="/">
-        <svg xmlns="http://www.w3.org/2000/svg" className="wok-sketch" version="1.0" width="60pt" height="40pt" viewBox="0 0 4032.000000 2268.000000" preserveAspectRatio="xMidYMid meet">
+        <svg xmlns="http://www.w3.org/2000/svg" className="wok-sketch" version="1.0" width="44pt" height="40pt" viewBox="0 0 4032.000000 2268.000000" preserveAspectRatio="xMidYMid meet">
 
         <g transform="translate(0.000000,2268.000000) scale(0.100000,-0.100000)" fill="white" stroke="none">
         <path d="M13782 19665 c-22 -48 -16 -57 23 -35 21 12 54 20 80 20 38 0 46 -4 62 -30 19 -33 21 -34 41 -21 10 6 6 14 -18 34 -30 26 -72 42 -140 53 -32 5 -37 3 -48 -21z"/>
