@@ -1,3 +1,5 @@
+@import '../../styles/sass/base.scss';
+
 header {
   position: absolute;
   display: flex;
@@ -15,11 +17,26 @@ header button {
 
 header  svg {
   position: absolute;
-  left: 15px;
-  top: -10px !important;
+  left: 25px;
+  top: -12px !important;
+  @media (min-width: $ip5-landscape) {
+    width: 55pt;
+    height: 55pt;
+    top: -18px !important;
+  }
+  @media (min-width: $desktop) {
+    width: 70pt;
+    height: 70pt;
+  }
 }
 
 header button {
   right: 10%;
   position: absolute;
+  @media (min-width: $ip5-landscape) {
+    font-size: $xs-fs !important
+  }
+  @media (min-width: $tablet) {
+    font-size: $m-fs !important
+  }
 }

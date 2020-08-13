@@ -2,13 +2,12 @@
 
 .thumb-list-container {
   @media (min-width: $tablet) {
-  
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     
     li {
-      width: 40vw;
+      width: 44vw;
     }
   }
 

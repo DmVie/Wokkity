@@ -11,6 +11,15 @@ h2.thumb-list-title {
   padding: 10px;
   font-size: $l-fs;
   position: relative;
+  top: -10px;
   margin-top: 0;
-  margin-bottom: 30px
+  margin-bottom: 30px;
+  @media (min-width: $ip5-landscape) {
+    font-size: $xl-fs;    
+  }
+  @media (min-width: $desktop) {
+    font-size: $xxl-fs;
+    
+  }
+
 }

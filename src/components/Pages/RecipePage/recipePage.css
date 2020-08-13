@@ -30,3 +30,6 @@ section.notes ul li:nth-child(odd) {
   background: rgb(239, 243, 243);
 }
 
+article.recipe {
+  padding-top: 30px
+}

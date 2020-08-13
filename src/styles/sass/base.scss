@@ -20,7 +20,8 @@ $black-fade: #1d1d1d;
 
 // Breakpoints: 
 $tablet: 768px;
-$desktop: 1025px;
+$desktop: 1024px;
+$ip5-landscape: 568px;
 
 body {
   user-select: none;
@@ -43,6 +44,12 @@ h2 {
 
 p, a, li, textarea, input  {
   font-size: $s-fs;
+  @media(min-width: $ip5-landscape) {
+    font-size: 1.8rem;
+  }
+  @media(min-width: $tablet) {
+    font-size: $m-fs
+  }
 }
 
 ul li {

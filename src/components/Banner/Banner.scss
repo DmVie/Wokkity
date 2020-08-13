@@ -31,7 +31,6 @@
   overflow: hidden;
   top: 0;
   left: 0;
-  background: rgb(255,255,255);
   background: -moz-radial-gradient(circle, rgba(255,255,255,0) 35%, rgba(0,0,0,0.9364788151588761) 100%);
   background: -webkit-radial-gradient(circle, rgba(255,255,255,0) 35%, rgba(0,0,0,0.9364788151588761) 100%);
   background: radial-gradient(circle, rgba(255,255,255,0) 35%, rgba(0,0,0,0.9364788151588761) 100%);
@@ -47,37 +46,76 @@
 */
 
 /* 
-  Home Page main Banner
+  Home Page Main Home Page Banner
 */
-.banner-container.siteBanner,
+.banner-container.siteBanner {
+  height: 70vh;
+  width: auto;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+    @media (min-width: $ip5-landscape) {
+      height: 120vh;
+    }
+    @media (min-width: $tablet) {
+      height: 60vh;
+    }
+    @media (min-width: $desktop){
+      height: 100vh;
+    }
+}
+
+.banner-container.siteBanner > img {
+  height: 100%;
+  width: auto;
+  position: relative;
+  left: -150px;
+  @media(min-width: $ip5-landscape) {
+    left: -25px;
+    width: auto;
+    height: 100%;
+  }
+
+  @media(min-width: $tablet) {
+    left: -250px
+  }
+
+  @media(min-width: $desktop) { // Same as ipad landscape
+    left: -350px
+  }
+}
+
+
+
+/* FULL PAGE BANNER
+======================= */
+
 .banner-container.page {
   height: 60vh;
   width: auto;
-    @media (min-width: '568px') {
-      height: 100vh;
+    @media (min-width: $ip5-landscape) {
+      height: 90vh;
     }
-    @media (min-width: '768px') {
+    @media (min-width: $tablet) {
       height: 60vh;
     }
-    @media (min-width: '1024px'){
+    @media (min-width: $desktop){
       height: 100vh;
     }
 
 }
 
-.banner-container.siteBanner {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
-  height: 70vh
-}
-
-.banner-container.siteBanner > img,
 .banner-container.page > img {
   height: 100%;
   width: auto;
   position: relative;
   left: -150px;
-  @media(min-width: '568px') {
+  @media(min-width: $ip5-landscape) {
     left: 0px;
+    height: 100%;
+    width: auto;
+  }
+
+  @media(min-width: $tablet) {
+    left: -100px
   }
 
   @media(min-width: '930px') {
@@ -96,19 +134,34 @@
    @media (min-width: '375px') {
      margin-top: 140px
    }
-   @media (min-width: '568px') {
-    margin-top: 100px;  
+   @media (min-width: $ip5-landscape) {  // iphone 5 landscape
+    margin-top: 80px;  
    }
 }
 
 .banner-container.siteBanner h1 {
   font-size: 5rem;
-   @media (min-width: $tablet) {
-     font-size: 8rem;
+   @media (min-width: '410px') {
+     font-size: 6rem;
    }
+
+   @media (min-width: '667px') {
+     margin-top: 100px;
+     font-size: 7rem;
+   }
+
+   @media (min-width: $tablet) {
+    
+     margin-top: 150px;
+   }
+   @media (min-width: $desktop) {
+     font-size: 9rem;
+     margin-top: 180px;
+   }
+
+
 }
 
-// FULL PAGE BANNER
 
 .banner-container.siteBanner h1,
 .banner-container.page h1{
@@ -120,11 +173,24 @@
       padding: 2px 40px;
       
     }
+
+
+}
+
+.banner-container.page h1{
+  @media (min-width: $tablet) {
+    font-size: $xl-fs
+  }
+  @media (min-width: $desktop) {
+    font-size: $xxl-fs;
+    margin-top: 150px
+  }
 }
 
 
 
-// THUMBNAIL BANNER
+/* THUMBNAIL BANNER
+====================== */
 
 .banner-container a {
   display: inline-block;
@@ -135,6 +201,7 @@
 
 .banner-container.thumb h2{
   display: inline-block;
+  position: relative;
   top: 0;
   background: rgba(0,0,0,0.5);
   border-bottom: 1px solid $red;
@@ -144,11 +211,17 @@
   @media (min-width: '450px') {
     font-size: $ml-fs
   }
-  @media (min-width: '568px') {
+  @media (min-width: $ip5-landscape) {
     font-size: $l-fs
   }
   @media (min-width: $tablet) {
-    font-size: $ml-fs
+    font-size: $s-fs;
+    top: -6px;
+  }  
+  @media (min-width: $desktop) {
+    font-size: $m-fs;
+    top: -10px;
+
   }  
 }
 
@@ -163,7 +236,7 @@
   line-height: 1.4;
   font-size: $xs-fs;
   @media (min-width: '568px') {
-    font-size: $s-fs;
+    font-size: $xs-fs;
     margin-top: 15px;
   }
 }
