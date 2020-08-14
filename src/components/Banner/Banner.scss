@@ -90,7 +90,7 @@
 
 .banner-container.page {
   height: 60vh;
-  width: auto;
+ 
     @media (min-width: $ip5-landscape) {
       height: 90vh;
     }
@@ -110,8 +110,6 @@
   left: -150px;
   @media(min-width: $ip5-landscape) {
     left: 0px;
-    height: 100%;
-    width: auto;
   }
 
   @media(min-width: $tablet) {
