@@ -23,3 +23,13 @@ h2.thumb-list-title {
   }
 
 }
+
+h2.thumb-list-title > svg {
+  position: absolute;
+  left: 0;
+  top: -80px;
+}
+
+.page-content > h2 {
+  font-family: 'Special Elite'
+}
