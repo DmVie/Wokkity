@@ -115,7 +115,10 @@
   }
 
   @media(min-width: $tablet) {
-    left: -100px
+    left: -100px;
+    height: 100%;
+    width: auto;
+    
   }
 
   @media(min-width: '930px') {
