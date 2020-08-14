@@ -84,7 +84,7 @@ const RecipePage = ({recipe, setRecipeComments, ...rest}) => {
         <article  className="recipe">
           <section dangerouslySetInnerHTML={createMarkup(recipe.desc)} className="desc">
           </section>
-          <h2>How to make        <svg xmlns="http://www.w3.org/2000/svg" version="1.0" className="mortar-pestle-sketch" width="100pt" height="200" stroke="yellow" viewBox="0 0 1856.000000 2823.000000" preserveAspectRatio="xMidYMid meet">
+          <h2>How to make        <svg xmlns="http://www.w3.org/2000/svg" version="1.0" className="mortar-pestle-sketch" width="100pt" height="170" stroke="yellow" viewBox="0 0 1856.000000 2823.000000" preserveAspectRatio="xMidYMid meet">
 
           <g transform="translate(0.000000,2823.000000) scale(0.100000,-0.100000)" fill="rgba(255, 68, 68, 0.25)" stroke="none">
   <path d="M14705 27632 c-16 -1 -61 -10 -100 -19 -38 -8 -87 -17 -109 -18 -71 -5 -201 -27 -216 -36 -8 -4 -31 -16 -50 -26 -19 -9 -38 -22 -42 -27 -4 -6 -8 -7 -8 -2 0 21 -39 -29 -45 -58 -3 -17 -11 -43 -17 -58 -6 -15 -7 -35 -4 -44 6 -15 8 -15 29 0 12 9 31 21 42 26 11 6 34 19 50 30 28 19 69 39 160 80 56 26 132 48 185 56 25 3 57 10 71 15 14 6 86 11 160 12 74 2 140 6 147 11 18 11 -4 46 -28 46 -11 0 -20 5 -20 10 0 10 -129 11 -205 2z"/>
