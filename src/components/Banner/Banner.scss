@@ -49,39 +49,22 @@
   Home Page Main Home Page Banner
 */
 .banner-container.siteBanner {
-  height: 70vh;
+  height: 90vh;
   width: auto;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
-    @media (min-width: $ip5-landscape) {
-      height: 120vh;
-    }
-    @media (min-width: $tablet) {
-      height: 60vh;
-    }
-    @media (min-width: $desktop){
-      height: 100vh;
-    }
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+
 }
 
-.banner-container.siteBanner > img,
-.banner-container.page > img {
+.banner-container.siteBanner > img {
   height: 100%;
   width: auto;
   position: relative;
-  left: -150px;
-  @media(min-width: $ip5-landscape) {
-    left: -25px;
-    width: auto;
-    height: 100%;
+  left: -250px;
+  @media (min-width: $ip5-landscape) {
+    height: 90vh;
+    left: 0px;
   }
 
-  @media(min-width: $tablet) {
-    left: -250px
-  }
-
-  @media(min-width: $desktop) { // Same as ipad landscape
-    left: -350px
-  }
 }
 
 
@@ -104,29 +87,31 @@
 
 }
 
-// .banner-container.page > img {
-//   height: auto;
-//   width: 100%;
-//   position: relative;
+.banner-container.page > img {
+  height: 100%;
+  width: auto;
+  position: relative;
+  left: -150px;
   
-//   @media(min-width: $ip5-landscape) {
-//     left: 0px;
-//   }
+  @media(min-width: $ip5-landscape) {
+    left: 0px;
+    width: 100%;
+    height: auto;
+  }  
 
-
-  
-
-//   @media(min-width: $tablet) {
-//     left: -100px;
-//     height: auto;
-//     width: 100%
+  @media(min-width: $tablet) {
+    height: 100%;
+    width: auto;
+    left: -200px;
     
-//   }
+  }
 
-//   @media(min-width: '930px') {
-//     left: 0;
-//   }
-// }
+  @media(min-width: '930px') {
+    left: 0;
+    width: 100%;
+    height: auto
+  }
+}
 
 .banner-container.siteBanner header,
 .banner-container.page header{
