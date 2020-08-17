@@ -49,7 +49,7 @@
   Home Page Main Home Page Banner
 */
 .banner-container.siteBanner {
-  height: 90vh;
+  height: 75vh;
   width: auto;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
 
@@ -61,6 +61,8 @@
   position: relative;
   left: -250px;
   @media (min-width: $ip5-landscape) {
+    width: 100%;
+    height: auto;
     height: 90vh;
     left: 0px;
   }
