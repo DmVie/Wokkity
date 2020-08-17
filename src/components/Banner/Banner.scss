@@ -92,7 +92,7 @@
       height: 60vh;
     }
     @media (min-width: $desktop){
-      height: 100vh;
+      height: 80vh;
     }
 
 }
@@ -118,8 +118,7 @@
 
   @media(min-width: '930px') {
     left: 0;
-    width: 100%;
-    height: auto
+
   }
 }
 
