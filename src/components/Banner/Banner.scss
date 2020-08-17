@@ -52,8 +52,14 @@
   height: 75vh;
   width: auto;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
-
+  @media (min-width: $ip5-landscape) {
+    height: 120vh;
+  }
+  @media (min-width: $tablet) {
+    height: 80vh;
+  }
 }
+
 
 .banner-container.siteBanner > img {
   height: 100%;
@@ -61,10 +67,12 @@
   position: relative;
   left: -250px;
   @media (min-width: $ip5-landscape) {
-    width: 100%;
-    height: auto;
-    height: 90vh;
+    height: 100%;
+    width: auto;
     left: 0px;
+  }
+  @media (min-width: $tablet) {
+    left: -200px;
   }
 
 }
