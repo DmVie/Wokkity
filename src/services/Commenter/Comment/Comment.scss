@@ -1,5 +1,13 @@
 @import '../../../styles/sass/base.scss';
 
+.comments-section {
+  max-width: 500px;
+  margin: 0 auto;
+  @media (min-width: '768px') {
+    max-width: 650px
+  }
+}
+
 .comment-container {
   background: white;
   padding: 15px;
@@ -38,14 +46,13 @@
   font-size: 6rem;
   position: relative;
   top: 5px;
-  color: $off-white;
-  
+  color: $off-white;  
 }
 
 
 .user-data-left p.commenter {
   margin: 5px 0 10px 0;
-  font-size: $xs-fs;
+  font-size: $s-fs;
 
 }
 
@@ -60,8 +67,8 @@
   padding: 8px 10px;
   font-size: $xxs-fs;
   text-align: left;
-  @media (min-width: 375px) {
-    font-size: $xs-fs;
+  @media (min-width: '375px') {
+    font-size: $s-fs;
   }
 
 }

@@ -36,7 +36,7 @@
 .switch-box-content {
   background: white;
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 10px 40px 10px;
   border-right: 1px solid rgb(228, 228, 228);
   border-left: 1px solid rgb(228, 228, 228);
   border-bottom: 1px solid rgb(228, 228, 228);
@@ -46,5 +46,9 @@
 .switch-box-container ol li {
   font-size: $xs-fs;
   line-height: 1.4;
-  margin-top: $xs-fs
+  margin-top: $xs-fs;
+  @media (min-width: '640px') {
+    font-size: $s-fs;
+    line-height: 1.5;
+  }
 }
