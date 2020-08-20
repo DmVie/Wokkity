@@ -1,3 +1,5 @@
+@import '../../styles/sass/base.scss';
+
 button.sign-in-with-google {
   background: url('https://wokkiti.s3-ap-southeast-1.amazonaws.com/google-btn-norm.png');
   width: 160px;
@@ -12,4 +14,8 @@ button.sign-in-with-google {
     left: -22%;
     top: 14px;
   }
+  @media (min-width: $tablet) {
+    width: 180px;
+  }
 }
+

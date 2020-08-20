@@ -144,7 +144,7 @@
   }
   @media (min-width: '640px') {  // iphone 5 landscape
     margin-top: 100px;  
-    }
+  }
 }
 
 .banner-container.page h1 {
@@ -155,8 +155,15 @@
    @media (min-width: $ip5-landscape) {  // iphone 5 landscape
     margin-top: 80px;  
    }
-
-}
+   @media (min-width: $tablet) {
+    font-size: $xl-fs;
+    margin-top: 180px;
+   }
+   @media (min-width: '1020px') {
+    font-size: $xxl-fs;
+    margin-top: 200px;
+   }
+ }
 
 .banner-container.siteBanner h1 {
   font-size: 5rem;
@@ -195,15 +202,6 @@
 
 }
 
-.banner-container.page h1{
-  @media (min-width: $tablet) {
-    font-size: $xl-fs
-  }
-  @media (min-width: $desktop) {
-    font-size: $xxl-fs;
-    margin-top: 150px
-  }
-}
 
 
 

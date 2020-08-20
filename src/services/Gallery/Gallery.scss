@@ -41,6 +41,9 @@ ul.gallery-list > div  {
   width: 32.33%;
   height: auto;
 
+  @media (min-width: "568px") {
+    width: 19%
+  }
 
   @media (min-width: $tablet) {
      margin: 1%; /*1vw margin for 5 per row is 10vw in total, 90vw left for images 90 / 5 so 18vw*/
