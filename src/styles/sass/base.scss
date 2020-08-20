@@ -42,6 +42,10 @@ h2 {
   font-size: $l-fs
 }
 
+h3 {
+  font-size: $m-fs
+}
+
 p, a, li, textarea, input  {
   font-size: $s-fs;
   @media(min-width: $ip5-landscape) {

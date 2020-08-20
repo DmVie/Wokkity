@@ -7,18 +7,17 @@
 
 .auth-container-wrapper {
   width: 80vw;
-  height: 80vh;
   background: white;
-  margin-top: 5vh;
+  margin-top: 8vh;
   border-radius: 10px;
   position: relative;
 }
 
 .auth-header {
   border-radius: 10px 10px 0 0;
-  padding-top: 12px;
-  border-bottom: 1px solid darken($info-blue, 30%);
-  background: $info-blue;
+  padding-top: 15px;
+  border-bottom: 1px solid $off-white;
+  background: rgb(35, 100, 175);
   .fa-window-close {
     right: 2px;
     top: 2px;
@@ -29,7 +28,7 @@
     top: 1.7px;
     background: rgb(247, 247, 247);
     font-size: $xs-fs;
-    color: rgb(182, 182, 182);
+    
   }
   .button:last-child {
     margin-left: 20px

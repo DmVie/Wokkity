@@ -35,12 +35,12 @@
 }
 
 .button--tab {
-  color: #727272;
+  color: #c6c6c6;
   background: white;
-  border-top: 1px solid darken($info-blue, 10%);
-  border-left: 1px solid darken($info-blue, 10%);
-  border-right: 1px solid darken($info-blue, 10%);
-  border-bottom: 1px solid darken($info-blue, 10%);
+  border-top: 1px solid $off-white;
+  border-left: 1px solid $off-white;
+  border-right: 1px solid $off-white;
+  border-bottom: 1px solid $off-white;
   border-radius: 8px 8px 0 0;
   outline-color: gray;
   outline: 0;
@@ -50,9 +50,9 @@
 }
 
 .button--tab.active {
-  border-bottom: none;
+  border-bottom: 1px solid white;
   color: #272727;
-  background: white;
+  background: white !important;
   font-weight: bold;
 }
 

@@ -1,7 +1,15 @@
 button.sign-in-with-google {
   background: url('https://wokkiti.s3-ap-southeast-1.amazonaws.com/google-btn-norm.png');
-  width: 191px;
-  height: 46px;
+  width: 160px;
+  height: 40px;
   background-size: cover;
-  border: none
+  border: none;
+  position: relative;
+  cursor: pointer;
+  &:before {
+    content: 'Click to';
+    position: absolute;
+    left: -22%;
+    top: 14px;
+  }
 }
