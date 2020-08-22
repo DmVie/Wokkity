@@ -1,0 +1,44 @@
+@import '../../styles/sass/base.scss';
+
+.slide-box {
+  position: absolute;
+  width: 50%;
+  padding:10px 0 20px 0;
+  z-index: 999;
+  top: 0;
+  background: #272727;
+  @media (min-width: $tablet) {
+    width: 33%
+  }
+  @media (min-width: $desktop) {
+    width: 25%;
+  }
+}
+
+.slide-box svg {
+  font-size: 2.5rem;
+  background: transparent;
+  &:active {
+    font-size: 2.4rem;
+  }
+}
+
+
+.slide-box li {
+  list-style: none;
+  text-align: left;
+  margin: 0 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(175, 175, 175);
+  &:hover {
+    background: #323232;
+  }
+  &:hover a {
+    color: white;
+  }
+}
+
+.slide-box li a {
+  color: rgb(198, 198, 198);
+}
+
