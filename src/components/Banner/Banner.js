@@ -58,8 +58,7 @@ const BannerOverlayContent = (props) => {
             noOfRatings={props.noOfRatings} 
             type="groupAverage" />
           )
-         }
-           
+         }           
       </>
     )
   }

@@ -30,9 +30,10 @@ header button {
 //   }
 // }
 
-header .fa-home { // Font awesome icon
+header .fa-bars { // Font awesome icon
   position: absolute;
   font-size: 2.5rem;
+  cursor: pointer;
   top: 5px;
   left: 20px;
   color: $off-white;

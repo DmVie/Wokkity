@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import HomePage from '../components/Pages/HomePage/HomePage';
 import PageNotFound from '../components/Pages/PageNotFound/PageNotFound';
 import RecipePage from '../components/Pages/RecipePage/RecipePage';
+import RecipesPage from '../components/Pages/RecipesPage/RecipesPage';
 
 import Modal from '../services/Modal/Modal';
 import Auth from '../components/Auth/Auth';
@@ -31,6 +32,7 @@ const AppRouter = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" render={(props) => <HomePage {...props} cancelLoginModal={cancelLoginModal} launchSigninModal={launchSigninModal}  setShowLoginModal={setShowLoginModal} showLoginModal={showLoginModal} /> } exact/>
+        <Route path="/recipes" component={RecipesPage} />
         <Route path="/recipe/:id" render={(props) => <RecipePage {...props} cancelLoginModal={cancelLoginModal} launchSigninModal={launchSigninModal}  setShowLoginModal={setShowLoginModal} showLoginModal={showLoginModal} /> }  />
         <Route component={PageNotFound} />
       </Switch>

@@ -8,7 +8,6 @@ const commentRouter = require('./routes/commentRoutes');
 
 app.set('trust proxy', 1)
 
-
 require('dotenv').config();
 
 require('./firebase-admin');

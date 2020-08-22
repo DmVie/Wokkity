@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import './HomePage.scss';
 
 import Banner from '../../Banner/Banner';
 import ThumbList from '../../ThumbList/ThumbList';
 
+function ScrollToTopOnMount() {
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [])
+  return null
+}
+
 const HomePage = (props) => {
   return (
     <div className="landing-page">
+      <ScrollToTopOnMount />
       <Banner 
         title="Wokkiti" 
         type="siteBanner" 
