@@ -11,7 +11,7 @@ const RecipesPage = (props) => {
       <Banner 
         title="Recipes" 
         type="siteBanner" 
-        img="https://wokkiti.s3-ap-southeast-1.amazonaws.com/recipes/Thai+Green+Curry+Soup/Green-Curry1-aspect-ratio-large.jpg"
+        img="https://wokkiti.s3-ap-southeast-1.amazonaws.com/20200701_173803+(3)+(1).jpg"
         {...props}
         />
       <div className="content-container">
