@@ -11,7 +11,7 @@ h2.thumb-list-title {
   padding: 10px;
   font-size: $l-fs;
   position: relative;
-  top: -10px;
+  top: 20px;
   margin-top: 0;
   margin-bottom: 30px;
   @media (min-width: $ip5-landscape) {
@@ -27,7 +27,7 @@ h2.thumb-list-title {
 h2.thumb-list-title > svg {
   position: absolute;
   left: 0;
-  top: -80px;
+  top: -100px;
 }
 
 .page-content > h2 {

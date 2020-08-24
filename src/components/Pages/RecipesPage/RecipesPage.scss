@@ -1,2 +1,26 @@
 @import '../../../styles/sass/base.scss';
 
+.recipes h2.thumb-list-title {
+  margin: 0 0 -20px 0;
+  top: 0;
+  font-family: 'Special Elite'
+}
+
+div.filters-wrapper {
+  position: relative;
+}
+
+
+input.recipe {
+  border: none;
+  border-bottom: 2px solid $red;
+  outline: 0;
+  padding: 20px 0px 5px 0px;
+  background: inherit;
+
+}
+
+.filter-text-p {
+  font-size: $xxs-fs;
+  color: rgb(86, 86, 86);
+}

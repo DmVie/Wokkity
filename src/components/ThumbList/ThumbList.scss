@@ -1,6 +1,7 @@
 @import '../../styles/sass/base.scss';
 
 .thumb-list-container {
+  margin-top: 50px;
   @media (min-width: $tablet) {
     display: flex;
     flex-wrap: wrap;

@@ -1,0 +1,57 @@
+@import '../../styles/sass/base.scss';
+
+div.filters-container {
+  position: absolute;
+  top: -80px;
+  background: rgba(22, 22, 22, .95);
+  z-index: 2;
+  color: white;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+div.filters-container .fa-window-close {
+  background: none;
+}
+
+div.filters-container h3 {
+  margin-top: 5px;
+}
+
+div.filters-container > div {
+  margin: 10px 0;
+}
+
+div.filters-container input,
+div.filters-container select {
+  background: inherit;
+  color: white;
+  text-align: center;
+  width: 150px;
+  padding: 5px 0;
+  border: none;
+  border-bottom: 2px solid $red;
+  margin: 0 10px;
+}
+
+input.DateInput_input {
+  margin: 0 !important;
+  width: 90% !important;
+}
+
+div.filters-container select {
+  font-size: $s-fs;
+  text-align-last:center;
+  text-align: center;
+}
+
+div.filters-container option {
+  color: black
+}
+
+
+.DateInput_input.DateInput_input_1.DateInput_input__focused.DateInput_input__focused_2,
+.DateInput_input.DateInput_input_1 {
+  font-size: 12px;
+  color: black;
+}

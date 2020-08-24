@@ -6,6 +6,9 @@ const recipeSchema = new mongoose.Schema({
     required: [true, 'Title field is required.'],
     trim: true
   },
+  cuisine: {
+    type: String
+  }, 
   shortDesc: {
     type: String,
     trim: true,

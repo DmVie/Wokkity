@@ -7,6 +7,9 @@ import { Provider } from 'react-redux';
 import { firebase } from './firebase/firebase';
 import configureStore from './store/configureStore';
 
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
+
 // Composite Component Imports
 import LoadingPage from './components/Pages/LoadingPage/LoadingPage'; 
 

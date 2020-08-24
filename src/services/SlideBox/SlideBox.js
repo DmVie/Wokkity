@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { useTransition, animated, config } from 'react-spring'
+import { useTransition, animated } from 'react-spring'
 
 import './SlideBox.scss';
 
-/*
+/*    REMEMBER SLIDE BOX IS A PORTAL 
   @param           show     Boolean       To show or hide the slidebox.
   @param  toggleSlideBox    function,     Toggles show prop on click of a button
   @param        children    HTML          The html to be rendered in slidebox
