@@ -55,7 +55,6 @@ const RecipesPage = (props) => {
               value={props.filters.text} 
               onChange={onSearchRecipeChange}
               placeholder="Search for a recipe"
-              autoFocus
             />
           </div>
           <ThumbList recipes={props.recipes}/>
