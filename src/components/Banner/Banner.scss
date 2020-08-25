@@ -44,13 +44,20 @@
   @media (min-width: '375px') {
     margin-top: 140px
   }
+  
   @media (min-width: $ip5-landscape) {  // iphone 5 landscape
    margin-top: 80px;  
   }
-  @media (min-width: $tablet) {
-   font-size: $xl-fs;
-   margin-top: 180px;
+
+  @media (min-width: '667px') {
+   font-size: $xxl-fs;
+   margin-top: 100px;
   }
+  
+  @media (min-width: $tablet) {
+    margin-top: 200px;
+  }
+  
   @media (min-width: '1020px') {
    font-size: $xxl-fs;
    margin-top: 200px;
@@ -141,6 +148,196 @@
     }
   } 
 
+  @media (min-width: '1024px') {
+    height: 100vh;
+    > img.banner-bg {  
+      left: -150px;    
+    }
+  } 
 
+  @media (min-width: '1025px') {
+    height: 125vh;
+    > img.banner-bg {  
+      left: 0;    
+    }
+  } 
 }
 
+
+/* FULL PAGE BANNER
+============================== */
+
+.banner-container.page {
+  height: 60vh;
+  @media (min-width: $ip5-landscape) {
+    height: 90vh;
+  }
+}
+
+
+.banner-container.page > img {
+  height: 100%;
+  width: auto;
+  position: relative;
+  left: -150px;
+  @media(min-width: $ip5-landscape) {
+    left: 0px;
+    width: 105%;
+    height: auto;
+  }  
+  
+  @media(min-width: $tablet) {
+    height: 100%;
+    width: auto;
+    left: -200px;
+    
+  }
+  @media(min-width: '800px') {
+    height: 100%;
+    width: auto;
+    left: 0;    
+  }
+  @media(min-width: '1025px') {
+    height: auto;
+    width: 100%;
+    left: 0;    
+  }
+}
+
+
+
+
+// .banner-container.page {
+//   height: 60vh;
+//   @media (min-width: $ip5-landscape) {
+//     height: 90vh;
+//   }
+//   @media (min-width: $tablet) {
+//     height: 60vh;
+//   }
+//   @media (min-width: $desktop){
+//     height: 80vh;
+//   }
+
+// }
+
+// .banner-container.page > img {
+//   height: 100%;
+//   width: auto;
+//   position: relative;
+//   left: -150px;
+  
+//   @media(min-width: $ip5-landscape) {
+//     left: 0px;
+//     width: 100%;
+//     height: auto;
+//   }  
+
+//   @media(min-width: $tablet) {
+//     height: 100%;
+//     width: auto;
+//     left: -200px;
+    
+//   }
+
+//   @media(min-width: '930px') {
+//     left: 0;
+
+//   }
+// }
+
+/* THUMBNAIL BANNER
+====================== */
+
+.banner-container a {
+  display: inline-block;
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.banner-container.thumb h2{
+  display: inline-block;
+  position: relative;
+  top: 0;
+  background: rgba(0,0,0,0.5);
+  border-bottom: 1px solid $red;
+  padding: 2px 20px;
+  margin-bottom: 4px;
+  font-size: $s-fs;
+  @media (min-width: '450px') {
+    font-size: $ml-fs
+  }
+  @media (min-width: $ip5-landscape) {
+    font-size: $l-fs
+  }
+  @media (min-width: $tablet) {
+    font-size: $s-fs;
+    top: -6px;
+  }  
+  @media (min-width: $desktop) {
+    font-size: $m-fs;
+    top: -10px;
+
+  }  
+}
+
+
+.banner-container.thumb .vignette {
+  cursor: pointer;
+}
+
+.banner-container.thumb .vignette p {
+  width: 80%;
+  margin: 0 auto;
+  line-height: 1.3;
+  font-size: $xs-fs;
+  @media (min-width: '350px') {
+    margin: 10px auto 0;
+    line-height: 1.4
+  }
+  @media (min-width: '568px') {
+    font-size: $s-fs;
+    margin-top: 15px;
+  }
+  @media (min-width: '640px') {
+    font-size: $m-fs;
+    margin-top: 30px
+  }
+  @media (min-width: $tablet) {
+    font-size: $xs-fs;
+    margin-top: 10px;
+  }
+}
+
+
+
+
+
+.fa-info-circle{
+  color: $off-white;
+  font-size: $ml-fs;
+  position: absolute;
+  left: 8px; top: 8px;
+  z-index: 11
+}
+
+
+
+/* RECIPES PAGE BANNER */
+
+section.recipes-page .banner-container.siteBanner > img.banner-bg{ 
+  left: -450px;
+
+  // @media (min-width: '320px') {
+  //   left: -400px;
+  // }
+
+  @media (min-width: '768px') {
+    left: -600px;
+  }
+
+  @media (min-width: '568px') {
+    left: 0
+  }
+}
