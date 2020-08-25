@@ -86,7 +86,7 @@ const SignUp = ({ startGoogleLogin }) => {
 
   return (
     <div className="signup-container">
-      <p>You can sign in to using your google account if you have one</p>
+      <p>You can register for our site using your google account if you have one</p>
 
       <SignInWithGoogleButton startGoogleLogin={startGoogleLogin}/>
 

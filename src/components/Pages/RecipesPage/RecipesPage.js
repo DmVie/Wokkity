@@ -16,6 +16,8 @@ import './RecipesPage.scss';
 
 const RecipesPage = (props) => {
 
+  console.log('what recipes page props ', props)
+
   const [ showFilters, setShowFilters ] = useState(false)
 
   const onSearchRecipeChange = (e) => {    

@@ -32,7 +32,7 @@ const AppRouter = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/" render={(props) => <HomePage {...props} cancelLoginModal={cancelLoginModal} launchSigninModal={launchSigninModal}  setShowLoginModal={setShowLoginModal} showLoginModal={showLoginModal} /> } exact/>
-        <Route path="/recipes" component={RecipesPage} />
+        <Route path="/recipes" render={ () => <RecipesPage  setShowLoginModal={setShowLoginModal} launchSigninModal={launchSigninModal} cancelLoginModal={cancelLoginModal} showLoginModal={showLoginModal} />}  />
         <Route path="/recipe/:id" render={(props) => <RecipePage {...props} cancelLoginModal={cancelLoginModal} launchSigninModal={launchSigninModal}  setShowLoginModal={setShowLoginModal} showLoginModal={showLoginModal} /> }  />
         <Route component={PageNotFound} />
       </Switch>

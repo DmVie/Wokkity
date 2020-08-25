@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import SlideBox  from '../../services/SlideBox/SlideBox';
 
 const Header = (props) => {
-
+  console.log('header props , ',  props)
   const [ show, set ] = useState(false)
 
   return ( 
