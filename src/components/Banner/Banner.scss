@@ -10,14 +10,14 @@
 
 .banner-container.siteBanner h1{ 
   margin-top: 110px;
-  font-size: 5rem;
+  font-size: 6rem;
 
   @media (min-width: '375px') {
     margin-top: 140px
   }
 
   @media (min-width: '410px') {
-    font-size: 6rem;
+    font-size: 7rem;
   }
 
   @media (min-width: $ip5-landscape) {  // iphone 5 landscape
@@ -107,7 +107,6 @@
   Home Page Main Home Page Banner
 */
 .banner-container.siteBanner {
-  background: red;
   height: 90vh;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
   > img.banner-bg {
@@ -123,6 +122,7 @@
     > img.banner-bg {      
       height: 100%;
       width: auto;
+      left: 0;
     }
   } 
 
