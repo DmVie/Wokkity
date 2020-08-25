@@ -51,7 +51,6 @@ const AuthForm = (props) => {
       if(props.type === 'signup') {
         props.onSubmit(email, password, username)
         .catch((err) => {
-          console.log(err === 'auth/invalid-email')
           if(err === 'auth/invalid-email') {
             errors.push('Invalid email address')
           }else {
@@ -63,7 +62,6 @@ const AuthForm = (props) => {
         }) // only interested if things go wrong, so only tacking on the catch()
       }else{
         props.onSubmit(email, password)
-          .then((whatComesBack) => console.log(whatComesBack))
           .catch((err) => {
             if(err === 'auth/invalid-email') {
               errors.push('Invalid email address');
@@ -78,7 +76,6 @@ const AuthForm = (props) => {
           })
       }
     }
-    console.log(errors)
     setErrorMessage([...errors])
   }
 
