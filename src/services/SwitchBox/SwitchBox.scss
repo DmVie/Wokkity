@@ -2,6 +2,8 @@
 
 .switch-box-container {
   background: #e2e2e2;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .switch-box-container .switch-box-header {
@@ -30,7 +32,8 @@
 .switch-box-container ol {
   padding: 0;
   width: 80%;
-  margin: 0 auto
+  margin: 0 auto;
+
 }
 
 .switch-box-content {

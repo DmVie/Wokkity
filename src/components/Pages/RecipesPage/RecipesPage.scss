@@ -25,3 +25,10 @@ input.recipe {
   color: rgb(86, 86, 86);
 }
 
+
+.content-container.recipes h2 svg {
+  @media (min-width: $tablet) {
+    width: 200px;
+    height: 200px;
+  }
+}

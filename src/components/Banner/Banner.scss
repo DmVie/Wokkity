@@ -32,6 +32,7 @@
   }
   @media (min-width: $tablet) {    
     margin-top: 200px;
+    font-size: 8rem;
   }
   @media (min-width: $desktop) {
     font-size: 9rem;
@@ -133,7 +134,7 @@
   }
   
   @media (max-width: 768px) and (orientation: portrait){
-    height: 85vh;
+    height: 80vh;
     > img {
       position: relative;
       height: 100%;

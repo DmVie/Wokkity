@@ -28,7 +28,13 @@ h2.thumb-list-title > svg {
   position: absolute;
   left: 0;
   top: -100px;
+  @media (min-width: $tablet) {
+    font-size: 10rem;
+    top: -150px;
+    width: 200px
+  }
 }
+
 
 .page-content > h2 {
   font-family: 'Special Elite'
