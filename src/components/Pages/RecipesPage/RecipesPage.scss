@@ -15,20 +15,26 @@ input.recipe {
   border: none;
   border-bottom: 2px solid $red;
   outline: 0;
-  padding: 20px 0px 5px 0px;
+  padding: 20px 0px 15px 0px;
   background: inherit;
-
+  @media (min-width: $tablet) {
+    font-size: $l-fs;
+  }
 }
 
 .filter-text-p {
   font-size: $xxs-fs;
   color: rgb(86, 86, 86);
+  @media (min-width: $tablet) {
+    font-size: $s-fs
+  }
 }
 
 
 .content-container.recipes h2 svg {
   @media (min-width: $tablet) {
-    width: 200px;
-    height: 200px;
+    top: -160px;
+    width: 180px;
+    height: 180px;
   }
 }

@@ -31,11 +31,10 @@
     font-size: 7rem;
   }
   @media (min-width: $tablet) {    
-    margin-top: 200px;
-    font-size: 8rem;
+    margin-top: 240px;
+    font-size: 9rem;
   }
   @media (min-width: $desktop) {
-    font-size: 9rem;
     margin-top: 180px;
   }
 }
@@ -163,186 +162,6 @@
 }
 
 
-
-
-
-// @import '../../styles/sass/base.scss';
-
-// .banner-container {
-//   position: relative;
-//   text-align: center;
-//   padding: 0;
-//   overflow: hidden;
-// }   // DONE
-
-
-// .banner-container.siteBanner h1{ 
-//   margin-top: 110px;
-//   font-size: 6rem;  // DONE 
-
-//   @media (min-width: '375px') {
-//     margin-top: 140px
-//   }
-
-//   @media (min-width: '410px') {
-//     font-size: 7rem;
-//   }
-
-//   @media (min-width: $ip5-landscape) {  // iphone 5 landscape
-//   margin-top: 80px;  
-//   }
-//   @media (min-width: '640px') {  // iphone 5 landscape
-//     margin-top: 100px;  
-//   }
-//   @media (min-width: '667px') {
-//     margin-top: 100px;
-//     font-size: 7rem;
-//   }
-//   @media (min-width: $tablet) {    
-//     margin-top: 200px;
-//   }
-//   @media (min-width: $desktop) {
-//     font-size: 9rem;
-//     margin-top: 180px;
-//   }
-// }
-
-// .banner-container.page h1 {
-//   margin-top: 110px;
-//   @media (min-width: '375px') {
-//     margin-top: 140px
-//   }
-  
-//   @media (min-width: $ip5-landscape) {  // iphone 5 landscape
-//    margin-top: 80px;  
-//   }
-
-//   @media (min-width: '667px') {
-//    font-size: $xxl-fs;
-//    margin-top: 100px;
-//   }
-  
-//   @media (min-width: $tablet) {
-//     margin-top: 200px;
-//   }
-  
-//   @media (min-width: '1020px') {
-//    font-size: $xxl-fs;
-//    margin-top: 200px;
-//   }
-// }
-
-
-// .banner-container.siteBanner h1,
-// .banner-container.page h1{
-//   color: white;
-//   display: inline-block;
-//   background: rgba(0,0,0,0.4);
-//   padding: 2px 10px;
-//   border-bottom: 3px solid $red;
-//     @media (min-width: '500px') {
-//       padding: 2px 40px;
-//     }
-// }
-
-// .banner-container a {
-//   color: white;
-//   text-decoration: none;
-// }
-
-
-// .banner-container img.banner-bg{
-//   overflow: none;
-//   width: 100%;
-//   height: auto;
-// }
-
-// .vignette {
-//   position: absolute;
-//   z-index: 2;
-//   width: 100%;
-//   height: 100%;
-//   overflow: hidden;
-//   top: 0;
-//   left: 0;
-//   background: -moz-radial-gradient(circle, rgba(255,255,255,0) 35%, rgba(0,0,0,0.9364788151588761) 100%);
-//   background: -webkit-radial-gradient(circle, rgba(255,255,255,0) 35%, rgba(0,0,0,0.9364788151588761) 100%);
-//   background: radial-gradient(circle, rgba(255,255,255,0) 35%, rgba(0,0,0,0.9364788151588761) 100%);
-//   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#000000",GradientType=1);
-// }
-
-// /* .page refers to banner that take up a whole section of the screen, like the banner picture at the top of each recipe page
-
-// .siteBanner is the main site picture on the home page,  the splash screen as it were - the first thing that user sees when they visit the site
-
-// .thumb referes to banners that cover thumbs such as a list item. The list of recipes on the home page being an example.
-// */
-
-// /* 
-//   Home Page Main Home Page Banner
-// */
-
-// // @media only screen and (device-width: 768px) {
-// //   /* For general iPad layouts */
-// // }
-
-// // @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
-// //   /* For portrait layouts only */
-// // }
-
-// // @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-// //   /* For landscape layouts only */
-// // }
-
-// .banner-container.siteBanner {
-//   height: 90vh;
-//   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
-//   > img.banner-bg {
-//     position: relative;
-//     height: 100%;
-//     width: auto;
-//     left: -250px
-//   }
-
-
-//   @media (min-width: '568px') {
-//     height: 125vh;
-//     > img.banner-bg {      
-//       height: 100%;
-//       width: auto;
-//       left: 0;
-//     }
-//   } 
-
-
-//   @media (min-width: '768px') {
-//     height: 90vh;
-//     > img.banner-bg {      
-//       left: -400px;
-//     }
-//   } 
-
-//   @media (min-width: '769px') {
-//     height: 125vh;
-//     > img.banner-bg {  
-//       left: 0;    
-//     }
-//   } 
-
-//   @media (min-width: '1024px') {
-//     height: 100vh;
-//     > img.banner-bg {  
-//       left: -150px;    
-//     }
-//   } 
-
-//   @media (min-width: '1025px') {
-//     height: 125vh;
-//     > img.banner-bg {  
-//       left: 0;    
-//     }
-//   } 
-// }
 
 
 /* FULL PAGE BANNER
@@ -508,17 +327,25 @@
 /* RECIPES PAGE BANNER */
 
 section.recipes-page .banner-container.siteBanner > img.banner-bg{ 
-  left: -450px;
+  left: -350px;
 
   // @media (min-width: '320px') {
   //   left: -400px;
   // }
 
   @media (min-width: '768px') {
-    left: -600px;
+    left: -420px !important;
   }
 
   @media (min-width: '568px') {
     left: 0
   }
+  @media (min-width: '900px') {
+    left: 0 !important;
+  }
+  @media (min-width: '1200px') {
+    width: 100%;
+    height: auto;
+  }
+
 }
