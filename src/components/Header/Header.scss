@@ -54,13 +54,15 @@ header .fa-bars { // Font awesome icon
 
 
 header button {
-  top: 25px;
-  right: 30px;
+  top: 10px;
+  right: 20px;
   position: absolute;
   @media (min-width: $ip5-landscape) {
     font-size: $xs-fs !important
   }
   @media (min-width: $tablet) {
-    font-size: $m-fs !important
+    font-size: $m-fs !important;
+    top: 30px;
+    right: 30px;
   }
 }
